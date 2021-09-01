@@ -1,0 +1,199 @@
+
+body { 
+	background-color: #f9d826; 
+	color: #2f2605;
+	font-family: geomanistregular;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+.logo {
+	background-color: #2f2605;
+	color: #f9d826;
+	font-size: 1.5em;
+	font-weight: 600;
+	padding: 28px 8px 8px 8px;
+	width: 80px;
+}
+
+.titlerow {
+	margin-top: 69px;
+	margin-bottom: 213px;
+}
+
+.titlerow p {
+	font-weight: 500;
+}
+
+.proposito {
+	margin: 119px auto 119px;
+}
+/* 
+.proposito p {
+	font-weight: 300;
+}
+
+.proposito p.small {
+	font-weight: 500;
+}
+*/
+
+.queremos {
+	margin-top: 119px;
+}
+
+b {
+	font-weight: 600;
+} 
+
+p {
+	font-size: 1.7em;
+	font-weight: 300;
+}
+
+p.small {
+	font-size: 1.2em;
+	font-weight: 400;
+}
+
+.acciones {
+	margin-top: 300px;
+}
+.darkbg {
+	background-color: #2f2605;
+	color: #f9d826;
+}
+
+.lightbg {
+	background-color: #FCFAEE;
+	color: #2f2605;
+}
+
+.nace {
+	margin-top: 119px;
+}
+
+.contacto {
+	margin-top: 119px;
+}
+li {
+	font-size: 1.7em;
+	font-weight: 600;
+}
+
+a {
+	color: #2f2605;
+}
+
+a:hover {
+	color: #977d12;
+}
+
+.btn-primary {
+	background-color: #f9d826;
+	color: #2f2605;
+	border-color: #f9d826;
+}
+
+.btn-primary:hover {
+	background-color: #f9d826;
+	color: #2f2605;
+	border-color: #f9d826;
+}
+
+/* 
+.title_both {
+
+position: absolute;
+width: 52.43px;
+height: 19.14px;
+left: 173px;
+top: 52px; */
+
+/* .frame_laboratorio { */
+/* Both es una escuela y un laboratorio, un punto de partida para que tecnología y humanismo se encuentren. */
+/* 
+font-size: 42px;
+line-height: 110%;
+margin-top: 200px; */
+/* or 46px */
+/* 
+color: #2F2604;
+
+} */
+/* fonts */
+
+@font-face {
+font-family: "geomanistregular";
+font-weight: 100;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-thin-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 200;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-extralight-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 300;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-light-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-regular-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-book-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-medium-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 700;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-bold-webfont.woff2') format('woff2')
+}
+
+@font-face {
+font-family: "geomanistregular";
+font-weight: 800;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-black-webfont.woff2') format('woff2')
+}
+@font-face {
+font-family: "geomanistregular";
+font-weight: 900;
+font-style: normal;
+font-display: swap;
+src: url('./fonts/geomanist-ultra-webfont.woff2') format('woff2')
+}
+
+@font-face {
+font-family: "geomanistregular";
+font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
+font-style: italic;
+font-display: swap;
+src: url('./fonts/geomanist-regular-italic-webfont.woff2') format('woff2');
+}

@@ -1,128 +1,91 @@
+:root {
+    --both-light: #fcfaee;
+    --both-yellow: #f9d826;
+    --both-hover: #977d12;
+    --both-black: #2f2605;
+    --super-margin: 119px;
+  }
 
 body { 
-	background-color: #f9d826; 
-	color: #2f2605;
+	background-color: var(--both-yellow); 
+	color: var(--both-black);
 	font-family: geomanistregular;
 }
 
 h1 {
-	font-weight: 700;
+    font-weight: 700;
 }
 
-.logo {
-	background-color: #2f2605;
-	color: #f9d826;
-	font-size: 1.5em;
-	font-weight: 600;
-	padding: 28px 8px 8px 8px;
-	width: 80px;
-}
-
-.titlerow {
-	margin-top: 69px;
-	margin-bottom: 213px;
-}
-
-.titlerow p {
-	font-weight: 500;
-}
-
-.proposito {
-	margin: 119px auto 119px;
-}
-/* 
-.proposito p {
-	font-weight: 300;
-}
-
-.proposito p.small {
-	font-weight: 500;
-}
-*/
-
-.queremos {
-	margin-top: 119px;
+p {
+    font-size: 1.7em;
+    font-weight: 300;
 }
 
 b {
-	font-weight: 600;
+    font-weight: 600;
 } 
 
-p {
-	font-size: 1.7em;
-	font-weight: 300;
-}
-
-p.small {
-	font-size: 1.2em;
-	font-weight: 400;
-}
-
-.acciones {
-	margin-top: 300px;
-}
-.darkbg {
-	background-color: #2f2605;
-	color: #f9d826;
-}
-
-.lightbg {
-	background-color: #FCFAEE;
-	color: #2f2605;
-}
-
-.nace {
-	margin-top: 119px;
-}
-
-.contacto {
-	margin-top: 119px;
-}
 li {
-	font-size: 1.7em;
-	font-weight: 600;
+    font-size: 1.7em;
+    font-weight: 600;
 }
 
 a {
-	color: #2f2605;
+	color: var(--both-black);
 }
 
 a:hover {
-	color: #977d12;
+	color: var(--both-hover);
+}
+
+.hero p.small, p.small {
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 .btn-primary {
-	background-color: #f9d826;
-	color: #2f2605;
-	border-color: #f9d826;
+	background-color: var(--both-yellow);
+	color: var(--both-black);
+	border-color: var(--both-yellow);
 }
 
 .btn-primary:hover {
-	background-color: #f9d826;
-	color: #2f2605;
-	border-color: #f9d826;
+	background-color: var(--both-yellow);
+	color: var(--both-black);
+	border-color: var(--both-yellow);
 }
 
-/* 
-.title_both {
+.logo {
+    background-color: var(--both-black);
+    color: var(--both-yellow);
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 28px 8px 8px 8px;
+    width: 80px;
+}
 
-position: absolute;
-width: 52.43px;
-height: 19.14px;
-left: 173px;
-top: 52px; */
+.hero p {
+    font-weight: 500;
+}
 
-/* .frame_laboratorio { */
-/* Both es una escuela y un laboratorio, un punto de partida para que tecnología y humanismo se encuentren. */
-/* 
-font-size: 42px;
-line-height: 110%;
-margin-top: 200px; */
-/* or 46px */
-/* 
-color: #2F2604;
+.darkbg {
+    background-color: var(--both-black);
+    color: var(--both-yellow);
+}
 
-} */
+.lightbg {
+    background-color: var(--both-light);
+    color: var(--both-black);
+}
+
+.mt-super {
+	margin-top: var(--super-margin);
+}
+
+.mb-super {
+	margin-bottom: var(--super-margin);
+}
+
 /* fonts */
 
 @font-face {
@@ -196,4 +159,4 @@ font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
 font-style: italic;
 font-display: swap;
 src: url('./fonts/geomanist-regular-italic-webfont.woff2') format('woff2');
-}
+} 

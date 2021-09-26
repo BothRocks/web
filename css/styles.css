@@ -13,6 +13,10 @@ body {
     line-height: 1.3;
 }
 
+/* canvas {
+    display: block;
+} */
+  
 h1 {
     font-size: calc(1rem + 1.5vw);
     font-weight: 700;
@@ -100,20 +104,6 @@ a.twitter:hover {
 
 @font-face {
 font-family: "geomanistregular";
-font-weight: 100;
-font-style: normal;
-font-display: swap;
-src: url('./fonts/geomanist-thin-webfont.woff2') format('woff2')
-}
-@font-face {
-font-family: "geomanistregular";
-font-weight: 200;
-font-style: normal;
-font-display: swap;
-src: url('./fonts/geomanist-extralight-webfont.woff2') format('woff2')
-}
-@font-face {
-font-family: "geomanistregular";
 font-weight: 300;
 font-style: normal;
 font-display: swap;
@@ -125,13 +115,6 @@ font-weight: 400;
 font-style: normal;
 font-display: swap;
 src: url('./fonts/geomanist-regular-webfont.woff2') format('woff2')
-}
-@font-face {
-font-family: "geomanistregular";
-font-weight: 500;
-font-style: normal;
-font-display: swap;
-src: url('./fonts/geomanist-book-webfont.woff2') format('woff2')
 }
 @font-face {
 font-family: "geomanistregular";
@@ -147,26 +130,3 @@ font-style: normal;
 font-display: swap;
 src: url('./fonts/geomanist-bold-webfont.woff2') format('woff2')
 }
-
-@font-face {
-font-family: "geomanistregular";
-font-weight: 800;
-font-style: normal;
-font-display: swap;
-src: url('./fonts/geomanist-black-webfont.woff2') format('woff2')
-}
-@font-face {
-font-family: "geomanistregular";
-font-weight: 900;
-font-style: normal;
-font-display: swap;
-src: url('./fonts/geomanist-ultra-webfont.woff2') format('woff2')
-}
-
-@font-face {
-font-family: "geomanistregular";
-font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
-font-style: italic;
-font-display: swap;
-src: url('./fonts/geomanist-regular-italic-webfont.woff2') format('woff2');
-} 

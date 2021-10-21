@@ -1,0 +1,80 @@
+:root {
+    --both-light: #fcfaee;
+    --both-yellow: #f9d826;
+    --both-hover: #977d12;
+    --both-black: #2f2605;
+    --super-margin: 80px;
+  }
+
+body { 
+	background-color: var(--both-yellow); 
+	color: var(--both-black);
+	font-family: geomanistregular;
+    line-height: 1.3;
+}
+
+a, a:hover {
+    color: var(--both-black);
+}
+
+.logo {
+    background-color: var(--both-black);
+    color: var(--both-yellow);
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 92px 8px 0px 8px;
+}
+
+.darkbg {
+    background-color: var(--both-black);
+    color: var(--both-yellow);
+}
+
+.lightbg {
+    background-color: var(--both-light);
+    color: var(--both-black);
+}
+
+.mt-super {
+	margin-top: var(--super-margin);
+}
+
+.mb-super {
+	margin-bottom: var(--super-margin);
+}
+
+.mt-super-half {
+	margin-top: calc(var(--super-margin)/1.75);
+}
+
+
+/* fonts */
+
+@font-face {
+    font-family: "geomanistregular";
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url('/assets/fonts/geomanist-light-webfont.woff2') format('woff2')
+}
+@font-face {
+    font-family: "geomanistregular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('/assets/fonts/geomanist-regular-webfont.woff2') format('woff2')
+}
+@font-face {
+    font-family: "geomanistregular";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url('/assets/fonts/geomanist-medium-webfont.woff2') format('woff2')
+}
+@font-face {
+    font-family: "geomanistregular";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('/assets/fonts/geomanist-bold-webfont.woff2') format('woff2')
+}

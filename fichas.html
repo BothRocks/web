@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Fichas"
+stylesheet: fichas.css
+---
+
+<div class="container">
+    {% for ficha in site.fichas %}
+    <div class="row mt-super justify-content-center">
+        <div class="col-10">
+            <h1>{{ ficha.title }}</h1>
+            <h4>
+                <a href="{{ ficha.link_url }}">{{ ficha.link_title }}</a>
+            </h4>
+        </div>
+        <div class="col-10">
+            <p class="">{{ ficha.definition }}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <h3>Esto es guay porque...</h3>
+            {{ ficha.pros | markdownify }}
+        </div>        
+        <div class="col-10">
+            <h3>Pero ojo, que...</h3>
+            {{ ficha.cons | markdownify }}
+        </div>        
+    </div>        
+    {% endfor %}
+</div>
+
+

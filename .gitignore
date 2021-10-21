@@ -1,3 +1,6 @@
 both_web.code-workspace
 *.woff2
 geomanist-book-webfont.ttf
+_site
+Gemfile.lock
+subir_both.sh

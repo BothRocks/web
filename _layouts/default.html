@@ -54,8 +54,12 @@
 
 <body>
 
+    {% if page.header_small%}
+    {% include header_small.html %}
+    {% else %}
     {% include header.html %}
-    
+    {% endif %}
+
     {{ content }}
    
     {% include footer.html %}

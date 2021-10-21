@@ -2,29 +2,32 @@ let classifier;
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/YoAJBxnN9/';
 
 let video;
+const devices = [];
+
 let flippedVideo;
+
 let labelElement;
 let currentLabel, counter;
 
 var data = {
-    'Campoamor' : 
+    'campoamor' : 
     {
-        short: 'campoamor',
         full: 'Ramón de Campoamor',
     },
-    'Chueca' : 
+    'chueca' : 
     {
-        short: 'chueca',
         full: 'Federico Chueca',
     },
-    'Codorníu' :
+    'codorniu' :
     {
-        short: 'codorniu',
         full: 'Ricardo Codorníu',
     },
-    'Romero de Torres' :
+    'cortezo' :
     {
-        short: 'romero',
+        full: 'Doctor Cortezo',
+    },
+    'romero' :
+    {
         full: 'Julio Romero de Torres',
     },
 
@@ -35,24 +38,35 @@ function preload() {
 }
 
 function setup() {
+
     var canvas = createCanvas(320, 240);
     canvas.parent('canvas-placeholder');
 
     labelElement = select('#class_label');
     currentLabel='';
     counter = 0;
-    
+
+    var constraints = {
+      audio: false,
+      video: {
+        facingMode: {
+          exact: "environment"
+        }
+      } 
+    };
     video = createCapture(VIDEO);
     video.size(320, 240);
-    video.hide();
-  
+    video.hide();      
+
     flippedVideo = ml5.flipImage(video);
     classifyVideo();
+
 }
 
 function draw() {
   background(0);
   image(flippedVideo, 0, 0);
+  
 }
 
 function classifyVideo() {
@@ -78,17 +92,16 @@ function gotResult(error, results) {
         } else {
             if (newLabel!='') {
                 labelElement.html(data[newLabel].full);
-                select('#class_image').attribute('src', '/assets/img/' + data[newLabel].short + '.jpg')
+                select('#class_image').attribute('src', '/assets/img/' + results[0].label + '.jpg')
             }
         }
     }
     
     for (const result of results) {
 
-        confidence = int(result.confidence*100)
+        let element = select('#prg_' + result.label);
         
-        let element = select('#prg_' + data[result.label].short);
-                         
+        confidence = int(result.confidence*100)     
         element.style('width', confidence + '%');
         element.attribute('ariaValueNow', confidence + '')
         element.html(confidence + '%')

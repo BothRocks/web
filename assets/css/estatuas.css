@@ -13,10 +13,12 @@ h1, .h1 {
 
 h2#class_label {
     margin-bottom: 0;
+    font-weight: 500;
 }
 
 .h5, h5 {
     font-size: 1.1rem;
+    font-weight: 300;
 }
 
 h6, .h6 {

@@ -100,6 +100,10 @@ function gotResult(error, results) {
                 labelElement.html(data[newLabel].full);
                 dateElement.html(data[newLabel].dates);
                 select('#class_image').attribute('src', '/assets/img/' + results[0].label + '.jpg')
+            } else {
+                labelElement.html('Enfoca a una estatua');
+                dateElement.html('');
+                select('#class_image').attribute('src', '/assets/img/' + results[0].label + '.jpg')
             }
         }
     }

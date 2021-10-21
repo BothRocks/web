@@ -1,0 +1,11 @@
+.progress{
+    height: 14px;
+}
+
+.progress-bar {
+    transition: width .2s ease;
+}
+
+h6, .h6 {
+    margin-bottom: .25rem;
+}

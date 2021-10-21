@@ -10,3 +10,6 @@ collections:
   fichas:
     # output: true
     # permalink: /ficha/:name
+  proyectos:
+    output: true
+    permalink: /proyecto/:name

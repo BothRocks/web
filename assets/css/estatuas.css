@@ -1,11 +1,23 @@
 .progress{
     height: 14px;
+    font-size: .65rem;
 }
 
 .progress-bar {
     transition: width .2s ease;
 }
 
-h6, .h6 {
-    margin-bottom: .25rem;
+h1, .h1 {
+    font-weight: 600;
 }
+
+h6, .h6 {
+    margin-bottom: .125rem;
+    font-size: 0.9rem;
+}
+
+.lightbg {
+    background-color: #f1db77;
+    color: var(--both-black);
+}
+

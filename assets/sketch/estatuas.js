@@ -6,29 +6,34 @@ const devices = [];
 
 let flippedVideo;
 
-let labelElement;
+let labelElement, dateElement;
 let currentLabel, counter;
 
 var data = {
     'campoamor' : 
     {
         full: 'Ramón de Campoamor',
+        dates: '(1817-1901)',
     },
     'chueca' : 
     {
         full: 'Federico Chueca',
+        dates: '(1846-1908)',
     },
     'codorniu' :
     {
         full: 'Ricardo Codorníu',
+        dates: '(1846-1923)',
     },
     'cortezo' :
     {
         full: 'Doctor Cortezo',
+        dates: '(1850-1933)',
     },
     'romero' :
     {
         full: 'Julio Romero de Torres',
+        dates: '(1874-1930)',
     },
 
 }
@@ -43,6 +48,7 @@ function setup() {
     canvas.parent('canvas-placeholder');
 
     labelElement = select('#class_label');
+    dateElement = select('#date_label');
     currentLabel='';
     counter = 0;
 
@@ -82,7 +88,7 @@ function gotResult(error, results) {
       return;
     }
 
-    let newLabel = (results[0].confidence > 0.65) ? results[0].label : '';
+    let newLabel = (results[0].confidence > 0.5) ? results[0].label : '';
     if (newLabel != currentLabel) {
         counter = 10;
         currentLabel = newLabel;
@@ -92,6 +98,7 @@ function gotResult(error, results) {
         } else {
             if (newLabel!='') {
                 labelElement.html(data[newLabel].full);
+                dateElement.html(data[newLabel].dates);
                 select('#class_image').attribute('src', '/assets/img/' + results[0].label + '.jpg')
             }
         }

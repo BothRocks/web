@@ -1,6 +1,8 @@
 let classifier;
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/YoAJBxnN9/';
 
+let threshold = 0.65;
+
 let video;
 const devices = [];
 
@@ -88,7 +90,7 @@ function gotResult(error, results) {
       return;
     }
 
-    let newLabel = (results[0].confidence > 0.5) ? results[0].label : '';
+    let newLabel = (results[0].confidence > threshold) ? results[0].label : '';
     if (newLabel != currentLabel) {
         counter = 10;
         currentLabel = newLabel;
@@ -103,7 +105,7 @@ function gotResult(error, results) {
             } else {
                 labelElement.html('Enfoca a una estatua');
                 dateElement.html('');
-                select('#class_image').attribute('src', '/assets/img/' + results[0].label + '.jpg')
+                select('#class_image').attribute('src', '/assets/img/background.jpg')
             }
         }
     }

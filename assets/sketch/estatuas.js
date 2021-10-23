@@ -1,10 +1,10 @@
 let classifier;
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/YoAJBxnN9/';
 
-let threshold = 0.65;
+let threshold = 0.85;
 
-let video;
-const devices = [];
+var video;
+var canvasWidth;
 
 let flippedVideo;
 
@@ -46,7 +46,9 @@ function preload() {
 
 function setup() {
 
-    var canvas = createCanvas(320, 240);
+    canvasWidth = isMobileDevice() ? 180 : 320
+
+    var canvas = createCanvas(canvasWidth, 240);
     canvas.parent('canvas-placeholder');
 
     labelElement = select('#class_label');
@@ -55,30 +57,44 @@ function setup() {
     counter = 0;
 
     var constraints = {
-      audio: false,
-      video: {
-        facingMode: {
-          exact: "environment"
-        }
-      } 
-    };
-    video = createCapture(VIDEO);
-    video.size(320, 240);
+        audio: false,
+        video: {
+          facingMode: {
+            exact: "environment"
+          }
+        }    
+      };
+
+    video = createCapture(isMobileDevice() ? constraints : VIDEO);
+    video.size(canvasWidth, 240);
     video.hide();      
 
-    flippedVideo = ml5.flipImage(video);
+    if (isMobileDevice()) {
+        flippedVideo = video
+    } else {
+        flippedVideo = ml5.flipImage(video);
+    }
+    
     classifyVideo();
 
 }
 
 function draw() {
-  background(0);
-  image(flippedVideo, 0, 0);
-  
+    //   background(0);
+    if (isMobileDevice()) {
+        image(flippedVideo, 0, 0, canvasWidth, 240);
+    } else {
+        image(flippedVideo, 0, 0);
+    }
+
 }
 
 function classifyVideo() {
-  flippedVideo = ml5.flipImage(video);
+    if (isMobileDevice()) {
+        flippedVideo = video
+    } else {
+        flippedVideo = ml5.flipImage(video);
+    }
   classifier.classify(flippedVideo, gotResult);
   flippedVideo.remove();
 }
@@ -124,3 +140,8 @@ function gotResult(error, results) {
     classifyVideo();
 }
 
+
+//Gracias a https://coderwall.com/p/i817wa/one-line-function-to-detect-mobile-devices-with-javascript
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};

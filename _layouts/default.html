@@ -39,7 +39,7 @@
     <script src="/assets/static/bootstrap.bundle.min.js" ></script> -->
     
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/{{page.stylesheet}}">
+    <link rel="stylesheet" type="text/css" href="{{page.stylesheet}}">
 
     {% if page.useP5 %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
@@ -65,7 +65,7 @@
     {% include footer.html %}
 
     {% if page.sketch %}
-    <script src="/assets/sketch/{{page.sketch}}"></script>
+    <script src="{{page.sketch}}"></script>
     {% endif %}
     
 </body>

@@ -41,7 +41,7 @@ var data = {
 }
 
 function preload() {
-    classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+    classifier = ml5.imageClassifier(imageModelURL + 'model.json', gotModel);
 }
 
 function setup() {
@@ -144,4 +144,9 @@ function gotResult(error, results) {
 //Gracias a https://coderwall.com/p/i817wa/one-line-function-to-detect-mobile-devices-with-javascript
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-};
+}
+
+function gotModel(){
+    labelElement.html('Enfoca a una estatua');
+    dateElement.html('');
+}

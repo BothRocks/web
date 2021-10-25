@@ -12,6 +12,11 @@ let labelElement, dateElement;
 let currentLabel, counter;
 
 var data = {
+    'berenguela' :
+    {
+        full: 'Berenguela de Castilla',
+        dates: '(1179-1246)',
+    },
     'campoamor' : 
     {
         full: 'Ramón de Campoamor',
@@ -36,6 +41,11 @@ var data = {
     {
         full: 'Julio Romero de Torres',
         dates: '(1874-1930)',
+    },
+    'urraca' :
+    {
+        full: 'Urraca I de León',
+        dates: '(1081-1126)',
     },
 
 }
@@ -80,7 +90,6 @@ function setup() {
 }
 
 function draw() {
-    //   background(0);
     if (isMobileDevice()) {
         image(flippedVideo, 0, 0, canvasWidth, 240);
     } else {

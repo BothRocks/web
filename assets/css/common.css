@@ -43,6 +43,11 @@ a, a:hover {
     color: var(--both-black);
 }
 
+.yellowbg {
+    background-color: var(--both-yellow);
+    color: var(--both-black);
+}
+
 .mt-super {
 	margin-top: var(--super-margin);
 }

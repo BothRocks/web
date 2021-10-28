@@ -1,0 +1,59 @@
+---
+project_name: Disfraz de tigre
+
+stylesheet: /assets/disfraz/disfraz.css
+sketch: /assets/disfraz/disfraz.js?q=5
+
+layout: project
+header_small: true
+useP5: true
+useML5: true
+---
+
+<div class="row justify-content-center">
+
+    <!-- CANVAS -->
+    <div class="col-12 col-md-6 darkbg">
+        <div id="canvas-placeholder" class="" style="text-align:center;"></div>
+    </div>
+    
+    <div class="col-12 col-md-6">
+        <div class="row">
+
+            <!-- OUTPUT -->
+            <div class="col-12 mt-4 mt-md-0 mb-4">
+                <div class="card lightbg">
+                    <h2 class="mx-3 my-3 text-center" id="class_label">Cargando modelo</h2>
+                </div>
+            </div>
+            
+            <!-- PROGRESS 1 -->
+            <div class="col-6">
+                <h6>Máquina</h6>
+                <div class="progress mb-2">
+                    <div id="prg_maquina" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>Planta</h6>
+                <div class="progress mb-2">
+                    <div id="prg_planta" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            
+            <!-- PROGRESS 2 -->
+            <div class="col-6">        
+                <h6>Piedra</h6>
+                <div class="progress mb-2">
+                    <div id="prg_piedra" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h6>Animalito</h6>
+                <div class="progress mb-2">
+                    <div id="prg_animalito" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+

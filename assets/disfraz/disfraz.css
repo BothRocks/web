@@ -1,0 +1,37 @@
+.progress{
+    height: 28px;
+    font-size: .85rem;
+}
+
+.progress-bar {
+    transition: width .2s ease;
+}
+
+h1, .h1 {
+    font-weight: 600;
+}
+
+h2#class_label {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+.h2, h2 {
+    font-size: calc(1.125rem + .9vw);
+}
+
+.h5, h5 {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+h6, .h6 {
+    margin-bottom: .1rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.lightbg {
+    background-color: #f1db77;
+    color: var(--both-black);
+}
+

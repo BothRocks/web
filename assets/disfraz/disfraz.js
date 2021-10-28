@@ -3,32 +3,41 @@ let imageModelURL = 'https://teachablemachine.withgoogle.com/models/EQctlfbNA/';
 
 let threshold = 0.85;
 
-var video;
-var canvasWidth;
-
+let video;
+let canvasWidth;
 let flippedVideo;
-
 let labelElement;
 let currentLabel, counter;
-
-var data = {
+let data = {
     'maquina' :
     {
         full: 'Eres una máquina',
+        caps: 'Máquina',
     },
     'piedra' : 
     {
         full: 'Eres una piedra',
+        caps: 'Piedra',
     },
     'planta' : 
     {
         full: 'Eres una planta',
+        caps: 'Planta',
     },
     'animalito' :
     {
         full: 'Eres un animalito',
+        caps: 'Animalito',
     },
 }
+
+let players;
+let kit;
+let curSample = randIdx();
+let nxtSample;
+const sampleNames = ["animalito", "maquina", "piedra", "planta"];
+let audioStarted = false;
+let transportPlaying = false;
 
 function preload() {
     classifier = ml5.imageClassifier(imageModelURL + 'model.json', gotModel);
@@ -44,6 +53,22 @@ function setup() {
     labelElement = select('#class_label');
     currentLabel='';
     counter = 0;
+    
+    document.querySelector("#btn_start").addEventListener("click", async () => {
+        if (!audioStarted) {
+            await Tone.start();
+            audioStarted = true;
+            console.log("audio is ready");
+        }
+        if (transportPlaying) {
+            await Tone.Transport.stop();
+            console.log("transport stop");
+        } else {
+            await Tone.Transport.start();
+            console.log("transport start");
+        }
+        transportPlaying = !transportPlaying;
+    });
 
     var constraints = {
         audio: false,
@@ -63,6 +88,24 @@ function setup() {
     } else {
         flippedVideo = ml5.flipImage(video);
     }
+    
+    players = sampleNames.reduce(function(map, obj) {
+        map[obj] = "/assets/disfraz/samples/" + obj + ".wav";
+        map[obj+"_ani"] = "/assets/disfraz/samples/" + obj + "_ani.wav";
+        return map;
+    }, {});
+    kit = new Tone.Players(players).toDestination();
+    Tone.Transport.bpm.value = 137;
+    Tone.Transport.scheduleRepeat((time) => {
+        sampleName = sampleNames[curSample];
+        nxtSample = randIdx();
+        labelElement.html(data[sampleName].caps);
+        if (nxtSample==0) {
+            sampleName = sampleName + "_ani";  
+        }
+        curSample = nxtSample;
+        kit.player(sampleName).start(time);
+    }, "2m");
     
     classifyVideo();
 
@@ -102,11 +145,11 @@ function gotResult(error, results) {
         if (counter>0) {
             counter--;
         } else {
-            if (newLabel!='') {
-                labelElement.html(data[newLabel].full);
-            } else {
-                labelElement.html('Enfoca a algo');
-            }
+            // if (newLabel!='') {
+            //     labelElement.html(data[newLabel].full);
+            // } else {
+            //     labelElement.html('Enfoca a algo');
+            // }
         }
     }
     
@@ -132,4 +175,8 @@ function isMobileDevice() {
 
 function gotModel(){
     labelElement.html('Enfoca a algo');
+}
+
+function randIdx() {
+    return Math.floor(Math.random() * 4);
 }

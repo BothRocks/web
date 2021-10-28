@@ -39,6 +39,9 @@ const sampleNames = ["animalito", "maquina", "piedra", "planta"];
 let audioStarted = false;
 let transportPlaying = false;
 
+let score;
+let scoreElement;
+
 function preload() {
     classifier = ml5.imageClassifier(imageModelURL + 'model.json', gotModel);
 }
@@ -53,6 +56,9 @@ function setup() {
     labelElement = select('#class_label');
     currentLabel='';
     counter = 0;
+
+    scoreElement= select('#score');
+    score = 0n;
     
     document.querySelector("#btn_start").addEventListener("click", async () => {
         if (!audioStarted) {
@@ -66,6 +72,8 @@ function setup() {
         } else {
             await Tone.Transport.start();
             console.log("transport start");
+            score = 0;
+            updateScore();
         }
         transportPlaying = !transportPlaying;
     });
@@ -145,11 +153,10 @@ function gotResult(error, results) {
         if (counter>0) {
             counter--;
         } else {
-            // if (newLabel!='') {
-            //     labelElement.html(data[newLabel].full);
-            // } else {
-            //     labelElement.html('Enfoca a algo');
-            // }
+            if (newLabel!='' && labelElement.html()==data[newLabel].caps){
+                score++;
+                updateScore();
+            }
         }
     }
     
@@ -174,9 +181,14 @@ function isMobileDevice() {
 }
 
 function gotModel(){
-    labelElement.html('Enfoca a algo');
+    labelElement.html('&nbsp;');
 }
 
 function randIdx() {
     return Math.floor(Math.random() * 4);
+}
+
+
+function updateScore(){
+    scoreElement.html(score);
 }

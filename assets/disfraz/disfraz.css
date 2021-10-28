@@ -1,6 +1,6 @@
 .progress{
-    height: 18px;
-    font-size: .75rem;
+    height: 16px;
+    font-size: .7rem;
 }
 
 .progress-bar {
@@ -26,8 +26,13 @@ h2#class_label {
 
 h6, .h6 {
     margin-bottom: .1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
+}
+
+h6.score{
+    margin-bottom: -0.5rem;
+    font-size: 1rem;
 }
 
 .lightbg {

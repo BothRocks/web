@@ -81,7 +81,7 @@ function setup() {
             // PLAY
             await Tone.Transport.start();
             score = 0;
-            countdown = 4;
+            countdown = 1;
             updateScore();
             curSample = randIdx(true);
             startBtnElement.innerHTML = 'Detén la partida';
@@ -128,7 +128,7 @@ function setup() {
     // Countdown 
     Tone.Transport.scheduleRepeat((time) => {
         infoElement.html(countdown);
-        countdown -= 1;
+        countdown += 1;
     }, "4n", "0", "1m");
 
     // Main loop 

@@ -2,11 +2,12 @@ let classifier;
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/EQctlfbNA/';
 
 let threshold = 0.85;
+let steadyFrames = 6;
 
 let video;
 let canvasWidth;
 let flippedVideo;
-let labelElement;
+let infoElement;
 let currentLabel, counter;
 let data = {
     'maquina' :
@@ -37,7 +38,8 @@ let curSample = randIdx();
 let nxtSample;
 const sampleNames = ["animalito", "maquina", "piedra", "planta"];
 let audioStarted = false;
-let transportPlaying = false;
+let isPlaying = false;
+let startBtnElement;
 
 let score;
 let scoreElement;
@@ -53,29 +55,31 @@ function setup() {
     var canvas = createCanvas(canvasWidth, 240);
     canvas.parent('canvas-placeholder');
 
-    labelElement = select('#class_label');
+    infoElement = select('#class_label');
     currentLabel='';
     counter = 0;
 
     scoreElement= select('#score');
     score = 0n;
     
-    document.querySelector("#btn_start").addEventListener("click", async () => {
+    startBtnElement = document.querySelector("#btn_start");
+
+    startBtnElement.addEventListener("click", async () => {
         if (!audioStarted) {
             await Tone.start();
             audioStarted = true;
-            console.log("audio is ready");
+            console.log("Audio is ready");
         }
-        if (transportPlaying) {
+        if (isPlaying) {
             await Tone.Transport.stop();
-            console.log("transport stop");
+            console.log("Transport stop");
         } else {
             await Tone.Transport.start();
-            console.log("transport start");
+            console.log("Transport start");
             score = 0;
             updateScore();
         }
-        transportPlaying = !transportPlaying;
+        isPlaying = !isPlaying;
     });
 
     var constraints = {
@@ -102,12 +106,15 @@ function setup() {
         map[obj+"_ani"] = "/assets/disfraz/samples/" + obj + "_ani.wav";
         return map;
     }, {});
-    kit = new Tone.Players(players).toDestination();
+    kit = new Tone.Players(players, () => {
+        console.log("Samples are ready");
+    }).toDestination();
+    
     Tone.Transport.bpm.value = 137;
     Tone.Transport.scheduleRepeat((time) => {
         sampleName = sampleNames[curSample];
         nxtSample = randIdx();
-        labelElement.html(data[sampleName].caps);
+        infoElement.html(data[sampleName].caps);
         if (nxtSample==0) {
             sampleName = sampleName + "_ani";  
         }
@@ -147,13 +154,13 @@ function gotResult(error, results) {
 
     let newLabel = (results[0].confidence > threshold) ? results[0].label : '';
     if (newLabel != currentLabel) {
-        counter = 10;
+        counter = steadyFrames;
         currentLabel = newLabel;
     } else {
         if (counter>0) {
             counter--;
         } else {
-            if (newLabel!='' && labelElement.html()==data[newLabel].caps){
+            if (newLabel!='' && infoElement.html()==data[newLabel].caps){
                 score++;
                 updateScore();
             }
@@ -181,7 +188,8 @@ function isMobileDevice() {
 }
 
 function gotModel(){
-    labelElement.html('&nbsp;');
+    infoElement.html('&nbsp;');
+    startBtnElement.classList.remove("disabled");
 }
 
 function randIdx() {

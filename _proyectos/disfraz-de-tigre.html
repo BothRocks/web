@@ -12,12 +12,7 @@ useTone: true
 ---
 
 <div class="row ">
-
-    <!-- START BUTTON -->
-    <div class="col-12 mt-2 mb-4">
-        <button id="btn_start" type="button" class="btn btn-success w-100">Empieza a jugar</button>
-    </div>
-
+    
     <!-- CANVAS -->
     <div class="col-12 col-md-6">
         <div id="canvas-placeholder" class="darkbg" style="text-align:center;"></div>
@@ -35,10 +30,15 @@ useTone: true
             
             <!-- SCORE -->
             <div class="col-12 mb-2">        
-                <h6 class="score">Score</h6>
-                <h1 id="score">0</h1>
+                <h6 class="score text-center">Score</h6>
+                <h1 id="score" class="text-center">0</h1>
             </div>
             
+            <!-- START BUTTON -->
+            <div class="col-12 mt-2 mb-4">
+                <button id="btn_start" type="button" class="btn btn-success w-100 disabled">Empieza a jugar</button>
+            </div>            
+
             <!-- PROGRESS 1 -->
             <div class="col-6">
                 <h6>Máquina</h6>

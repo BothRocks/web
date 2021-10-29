@@ -1,8 +1,8 @@
 let classifier;
 let imageModelURL = 'https://teachablemachine.withgoogle.com/models/EQctlfbNA/';
 
-let threshold = 0.85;
-let steadyFrames = 6;
+let threshold = 0.90;
+let steadyFrames = 5;
 
 let video;
 let canvasWidth;
@@ -34,12 +34,13 @@ let data = {
 
 let players;
 let kit;
-let curSample = randIdx();
+let curSample;
 let nxtSample;
-const sampleNames = ["animalito", "maquina", "piedra", "planta"];
+const sampleNames = ["maquina", "piedra", "planta", "animalito"];
 let audioStarted = false;
 let isPlaying = false;
 let startBtnElement;
+let countdown;
 
 let score;
 let scoreElement;
@@ -70,14 +71,20 @@ function setup() {
             audioStarted = true;
             console.log("Audio is ready");
         }
+        
         if (isPlaying) {
+            // STOP
             await Tone.Transport.stop();
-            console.log("Transport stop");
+            startBtnElement.innerHTML = 'Empieza a jugar';
+            infoElement.html('&nbsp;');
         } else {
+            // PLAY
             await Tone.Transport.start();
-            console.log("Transport start");
             score = 0;
+            countdown = 4;
             updateScore();
+            curSample = randIdx(true);
+            startBtnElement.innerHTML = 'Detén la partida';
         }
         isPlaying = !isPlaying;
     });
@@ -106,22 +113,38 @@ function setup() {
         map[obj+"_ani"] = "/assets/disfraz/samples/" + obj + "_ani.wav";
         return map;
     }, {});
+    players["intro"] = "/assets/disfraz/samples/intro.wav";
     kit = new Tone.Players(players, () => {
         console.log("Samples are ready");
     }).toDestination();
     
     Tone.Transport.bpm.value = 137;
+
+    // Intro 
+    Tone.Transport.schedule((time) => {
+        kit.player("intro").start(time);
+    }, "0");
+
+    // Countdown 
+    Tone.Transport.scheduleRepeat((time) => {
+        infoElement.html(countdown);
+        countdown -= 1;
+    }, "4n", "0", "1m");
+
+    // Main loop 
     Tone.Transport.scheduleRepeat((time) => {
         sampleName = sampleNames[curSample];
-        nxtSample = randIdx();
+        nxtSample = randIdx(false);
         infoElement.html(data[sampleName].caps);
-        if (nxtSample==0) {
+        if (nxtSample==3) {
             sampleName = sampleName + "_ani";  
         }
         curSample = nxtSample;
         kit.player(sampleName).start(time);
-    }, "2m");
+    }, "2m", "1m");
+
     
+
     classifyVideo();
 
 }
@@ -192,10 +215,9 @@ function gotModel(){
     startBtnElement.classList.remove("disabled");
 }
 
-function randIdx() {
-    return Math.floor(Math.random() * 4);
+function randIdx(start) {
+    return Math.floor(Math.random() * (start?3:4));
 }
-
 
 function updateScore(){
     scoreElement.html(score);

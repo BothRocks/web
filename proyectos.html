@@ -5,13 +5,23 @@ layout: default
 header: header-common.html
 footer: footer-common.html
 ---
-<h1>Proyectos</h1>
-
-<ul>
-
-  {% for proyecto in site.proyectos reversed %}
-    <li>
-      <h2><a href="{{ proyecto.url }}">{{ proyecto.project_name }}</a></h2>
-    </li>
-  {% endfor %}
-</ul>
+<div class="container">
+  <div class="row mt-5">
+    {% for proyecto in site.proyectos reversed %}
+    <div class="col-12 mb-5">
+      <h2><a href="{{ proyecto.url }}">{{ proyecto.title }}</a></h2>
+      <div class="row">
+        <div class="col-3 col-md-2 col-xl-1">
+          <img src="{{ proyecto.thumbnail }}" class="w-100">
+        </div>
+        <div class="col-9 col-md-10 col-xl-11">
+          <p>
+            {{proyecto.summary}} 
+            <a href="{{ proyecto.url }}">Ir al proyecto</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

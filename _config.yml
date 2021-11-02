@@ -13,3 +13,7 @@ collections:
   proyectos:
     output: true
     permalink: /proyecto/:name
+    sort_by: project_order
+  eventos:
+    output: true
+    permalink: /evento/:name

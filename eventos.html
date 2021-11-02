@@ -1,0 +1,17 @@
+---
+title: Eventos
+
+layout: default
+header: header-common.html
+footer: footer-common.html
+---
+<h1>Eventos</h1>
+
+<ul>
+
+  {% for evento in site.eventos reversed %}
+    <li>
+      <h2><a href="{{ evento.url }}">{{ evento.event_name }}</a></h2>
+    </li>
+  {% endfor %}
+</ul>

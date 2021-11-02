@@ -9,7 +9,7 @@ footer: footer-common.html
   <div class="row mt-5">
     {% for proyecto in site.proyectos reversed %}
     <div class="col-12 mb-5">
-      <h2><a href="{{ proyecto.url }}">{{ proyecto.title }}</a></h2>
+      <h2><a href="{{ proyecto.url }}.html">{{ proyecto.title }}</a></h2>
       <div class="row">
         <div class="col-3 col-md-2 col-xl-1">
           <img src="{{ proyecto.thumbnail }}" class="w-100">
@@ -17,7 +17,7 @@ footer: footer-common.html
         <div class="col-9 col-md-10 col-xl-11">
           <p>
             {{proyecto.summary}} 
-            <a href="{{ proyecto.url }}">Ir al proyecto</a>
+            <a href="{{ proyecto.url }}.html">Ir al proyecto</a>
           </p>
         </div>
       </div>

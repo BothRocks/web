@@ -1,0 +1,17 @@
+---
+title: Proyectos
+
+layout: default
+header: header-common.html
+footer: footer-common.html
+---
+<h1>Proyectos</h1>
+
+<ul>
+
+  {% for proyecto in site.proyectos reversed %}
+    <li>
+      <h2><a href="{{ proyecto.url }}">{{ proyecto.project_name }}</a></h2>
+    </li>
+  {% endfor %}
+</ul>

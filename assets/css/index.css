@@ -32,6 +32,15 @@ a:hover {
 	color: var(--both-hover);
 }
 
+a.bothnav {
+	color: var(--both-black);
+    text-underline-offset: 4px;
+}
+
+a.bothnav:hover {
+	color: var(--both-hover);
+}
+
 
 a.twitter {
 	color: var(--both-black);

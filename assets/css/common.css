@@ -25,12 +25,18 @@ a, a:hover {
     padding: 92px 8px 0px 8px;
 }
 
-.logo-small {
+.logo-small{
     background-color: var(--both-black);
     color: var(--both-yellow);
     font-size: 1em;
     font-weight: 600;
-    padding: 40px 5px 0px 8px;
+    padding: 39px 5px 0px 8px;
+}
+
+.logo-small a{
+    background-color: var(--both-black);
+    color: var(--both-yellow);
+    text-decoration: none;
 }
 
 .darkbg {

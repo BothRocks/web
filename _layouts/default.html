@@ -56,13 +56,17 @@
 
 <body>
 
-    {% if layout.header%}
+    {% if page.header%}
+        {% include {{page.header}} %}
+    {% elsif layout.header%}
         {% include {{layout.header}} %}
     {% endif %}
 
     {{ content }}
    
-    {% if layout.footer %}
+    {% if page.footer%}
+        {% include {{page.footer}} %}
+    {% elsif layout.footer %}
         {% include {{layout.footer}} %}
     {% endif %}
 

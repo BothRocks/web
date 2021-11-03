@@ -1,9 +1,9 @@
 domain: both.rocks
-url: https://both.rocks/
+url: https://both.rocks
 title: Both rocks!
 name: Both
 
-exclude: [both_web.code-workspace, README.md, subir_both.sh]
+exclude: [both_web.code-workspace, README.md, subir_both.sh, subir_both_dev.sh]
 
 collections:
   fichas:

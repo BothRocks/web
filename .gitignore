@@ -2,5 +2,7 @@ both_web.code-workspace
 *.woff2
 geomanist-book-webfont.ttf
 _site
+_site_dev
 Gemfile.lock
 subir_both.sh
+subir_both_dev.sh

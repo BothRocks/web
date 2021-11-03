@@ -1,21 +1,32 @@
 ---
 title: Eventos
+description: Eventos presentes, pasados y futuros.
+thumbnail: /assets/favicon/apple-touch-icon.png
 
 layout: default
 header: header-common.html
 footer: footer-common.html
+
+
 ---
+<!-- Falta incluir la fecha -->
 <div class="container">
-  <h1>Eventos</h1>
-  
-  <ul>
-  
+  <div class="row mt-5">
     {% for evento in site.eventos reversed %}
-      <li>
-        <h2><a href="{{ evento.url }}">{{ evento.event_name }}</a></h2>
-      </li>
+    <div class="col-12 mb-5">
+      <h2><a href="{{ evento.url }}.html">{{ evento.title }}</a></h2>
+      <div class="row">
+        <div class="col-3 col-md-2 col-xl-1">
+          <img src="{{ evento.thumbnail }}" class="w-100">
+        </div>
+        <div class="col-9 col-md-10 col-xl-11">
+          <p>
+            {{evento.summary}} 
+            <a href="{{ evento.url }}.html">Ir al proyecto</a>
+          </p>
+        </div>
+      </div>
+    </div>
     {% endfor %}
-  </ul>
-
-
+  </div>
 </div>

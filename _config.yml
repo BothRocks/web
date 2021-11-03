@@ -2,7 +2,6 @@ domain: both.rocks
 url: https://both.rocks/
 title: Both rocks!
 name: Both
-description: Both es una escuela y un laboratorio. Un punto de encuentro entre tecnología y humanismo.
 
 exclude: [both_web.code-workspace, README.md, subir_both.sh]
 

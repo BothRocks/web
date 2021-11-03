@@ -92,7 +92,7 @@ useLeaflet: true
                 maxZoom: 19,
                 attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
             }).addTo(map);
-            L.tileLayer.provider('Stadia.Outdoors').addTo(map);
+            L.tileLayer.provider('Stamen').addTo(map);
             L.control.scale({imperial: true, metric: true}).addTo(map);
             L.marker({lat: 40.4109640, lon: -3.6811396}).bindPopup('Federico Chueca').addTo(map);
             L.marker({lat: 40.4117087, lon: -3.6807607}).bindPopup('Julio Romero de Torres').addTo(map);

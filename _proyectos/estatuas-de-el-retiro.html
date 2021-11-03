@@ -21,6 +21,7 @@ layout: project
 
 useP5: true
 useML5: true
+useLeaflet: true
 ---
 
 <div class="row justify-content-center">
@@ -82,6 +83,25 @@ useML5: true
         <p>Per fugit error ex. Mei ei everti scaevola incorrupte, per ea voluptua delicata. Laoreet vivendo qui id, vis id meis everti inermis. Accusamus similique cu mea. Pro vero habeo quidam et. </p>
         <p>Ex vis labitur discere nonumes, postea periculis nec ei. Nihil quaeque saperet vel ne, est vero etiam in. Ei pro quod expetenda, no eam dicit aperiri officiis. Vocent definitiones an pro, ei vix nominati oportere cotidieque, vix quis assum partem ut. Ius ut ridens officiis, congue ornatus delicata no usu, vel ut simul dolore dissentiunt. </p>
         <p>Modo prompta usu eu, sale audiam id vel. Eu cum nonumy iisque, sit no wisi dicat sonet. Te mea commodo tacimates, an nam pertinax salutatus. Vis ne nulla zril forensibus, at sed quando ignota iudicabit. Inciderint sadipscing nec in. An dico aeque dissentias vix, aeterno persecuti mediocritatem sed ut. Sea dico iuvaret consequat an, ea nec fabulas periculis. </p>
+        <div id="map" class="w-100" style="height: 700px;">
+        </div>
+        <script>
+            // initialize Leaflet
+            var map = L.map('map').setView({lon: -3.683, lat: 40.415}, 16);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+            }).addTo(map);
+            L.tileLayer.provider('Stadia.Outdoors').addTo(map);
+            L.control.scale({imperial: true, metric: true}).addTo(map);
+            L.marker({lat: 40.4109640, lon: -3.6811396}).bindPopup('Federico Chueca').addTo(map);
+            L.marker({lat: 40.4117087, lon: -3.6807607}).bindPopup('Julio Romero de Torres').addTo(map);
+            L.marker({lat: 40.4129383, lon: -3.6796489}).bindPopup('Ramón de Campoamor').addTo(map);
+            L.marker({lat: 40.4127123, lon: -3.6808000}).bindPopup('Ricardo Codorníu').addTo(map);
+            L.marker({lat: 40.4139482, lon: -3.6801022}).bindPopup('Doctor Cortezo').addTo(map);
+            L.marker({lat: 40.4169398, lon: -3.6859412}).bindPopup('Berenguela de Castilla').addTo(map);
+            L.marker({lat: 40.4169039, lon: -3.6864097}).bindPopup('Urraca I de León').addTo(map);
+        </script>
     </div>
     <div class="col-12 col-md-6">
         <h2>Motivación</h2>

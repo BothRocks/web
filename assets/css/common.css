@@ -33,6 +33,14 @@ a, a:hover {
     padding: 39px 5px 0px 8px;
 }
 
+.img-logo{
+    width: 125px;
+}
+
+.img-logo-small{
+    width: 60px;
+}
+
 .logo-small a{
     background-color: var(--both-black);
     color: var(--both-yellow);

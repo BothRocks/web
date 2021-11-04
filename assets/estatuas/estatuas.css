@@ -7,9 +7,9 @@
     transition: width .2s ease;
 }
 
-h1, .h1 {
+/* h1, .h1 {
     font-weight: 600;
-}
+} */
 
 h2#class_label {
     margin-bottom: 0;

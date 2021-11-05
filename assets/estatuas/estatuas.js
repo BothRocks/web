@@ -11,6 +11,10 @@ let flippedVideo;
 let labelElement, dateElement;
 let currentLabel, counter;
 
+let hideBtnElement;
+let isCameraHidden;
+let geomanist;
+
 var data = {
     'berenguela' :
     {
@@ -52,6 +56,7 @@ var data = {
 
 function preload() {
     classifier = ml5.imageClassifier(imageModelURL + 'model.json', gotModel);
+    geomanist = loadFont('/assets/fonts/geomanist-book-webfont.ttf');
 }
 
 function setup() {
@@ -60,6 +65,25 @@ function setup() {
 
     var canvas = createCanvas(canvasWidth, 240);
     canvas.parent('canvas-placeholder');
+
+    noStroke();
+    textFont(geomanist);
+    textSize(width / 17.3);
+
+    isCameraHidden = false;
+    hideBtnElement = document.querySelector("#btn_hide_cam");
+
+    hideBtnElement.addEventListener("click", async () => {
+        
+        isCameraHidden = !isCameraHidden;
+        if (isCameraHidden) {
+            // SHOW
+            hideBtnElement.innerHTML = 'Muestra el vídeo';
+        } else {
+            // HIDE
+            hideBtnElement.innerHTML = 'Oculta el vídeo';
+        }
+    });    
 
     labelElement = select('#class_label');
     dateElement = select('#date_label');
@@ -87,13 +111,22 @@ function setup() {
     
     classifyVideo();
 
+
+
 }
 
 function draw() {
-    if (isMobileDevice()) {
-        image(flippedVideo, 0, 0, canvasWidth, 240);
+    if(!isCameraHidden){
+        if (isMobileDevice()) {
+            image(flippedVideo, 0, 0, canvasWidth, 240);
+        } else {
+            image(flippedVideo, 0, 0);
+        }
     } else {
-        image(flippedVideo, 0, 0);
+        fill('#2f2605')
+        rect(0,0,canvasWidth, 240);
+        fill('#f9d826')
+        text('Pulsa el botón para mostrar el vídeo', 10,height/2)
     }
 
 }

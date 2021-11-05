@@ -24,22 +24,28 @@ useML5: true
 useLeaflet: true
 ---
 
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-3">
     <div class="col-12 col-lg-6 mb-3">
             <div id="canvas-placeholder" class="" style="text-align:center;"></div>
     </div>
     <div class="col-12 col-lg-6 mb-4">
         <div class="row g-0 shadow">
-          <div class="col-3 col-sm-4 ">
+          <div class="col-3 col-md-2 col-lg-3 col-xl-2">
             <img src="/assets/estatuas/background.jpg" class="img-fluid" alt="" id="class_image">
           </div>
-          <div class="col-9 col-sm-8 lightbg">
+          <div class="col-9 col-md-10 col-lg-9 col-xl-10 lightbg">
               <h2 class="mx-3 mt-3" id="class_label">Cargando modelo</h2>
-              <h5 class="mx-3" id="date_label">Enseguida empezamos</h2>
-          </div>
+              <h5 class="mx-3" id="date_label">Enseguida empezamos</h5>
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col-12">
+                <button id="btn_hide_cam" type="button" class="btn btn-success w-100">Oculta el vídeo</button>
+            </div>  
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-6 col-lg-3">
         <h6>Berenguela de Castilla</h6>
@@ -75,14 +81,33 @@ useLeaflet: true
     </div>
 </div>
 
-
-
-<div class="row mt-super">
+<div class="row mt-4">
     <div class="col-12 col-md-6">
         <h2>Instrucciones</h2>
-        <p>Per fugit error ex. Mei ei everti scaevola incorrupte, per ea voluptua delicata. Laoreet vivendo qui id, vis id meis everti inermis. Accusamus similique cu mea. Pro vero habeo quidam et. </p>
-        <p>Ex vis labitur discere nonumes, postea periculis nec ei. Nihil quaeque saperet vel ne, est vero etiam in. Ei pro quod expetenda, no eam dicit aperiri officiis. Vocent definitiones an pro, ei vix nominati oportere cotidieque, vix quis assum partem ut. Ius ut ridens officiis, congue ornatus delicata no usu, vel ut simul dolore dissentiunt. </p>
-        <p>Modo prompta usu eu, sale audiam id vel. Eu cum nonumy iisque, sit no wisi dicat sonet. Te mea commodo tacimates, an nam pertinax salutatus. Vis ne nulla zril forensibus, at sed quando ignota iudicabit. Inciderint sadipscing nec in. An dico aeque dissentias vix, aeterno persecuti mediocritatem sed ut. Sea dico iuvaret consequat an, ea nec fabulas periculis. </p>
+        <p>
+            <i>Aunque puedes usar esta app en tu portátil, seguramente te 
+                resulte más cómodo usarla desde el móvil.</i>
+        </p>
+        <p>
+            Hemos entrenado un modelo para que reconozca siete
+            estatuas del Parque de El Retiro, en Madrid. Puedes localizar las 
+            estatuas en el mapa.</p>
+        <p>
+            <b>Si quieres usar esta app como debe ser:</b> Date un paseo por el 
+            Parque y cuando estés a un par de metros de las estatuas, usa la 
+            aplicación para reconocerlas. No hace falta que estés justo 
+            enfrente, ni que mantengas el móvil perfectamente vertical. Cuando 
+            la red identifique a una estatua con una seguridad superior al 85%,  
+            lo indicará.
+        </p>
+        <p>
+            <b>Si quieres usar esta app creativamente:</b> Apunta el móvil a un 
+            objeto cualquiera, a un cuadro, a una persona (con su 
+            consentimiento, claro). Múevete a su alrededor y mira cómo la red 
+            trata desesperadamente de asignarle una categoría. Si encuentras
+            algo curioso, compártelo con nosotros en <a href="https://twitter.com/bothrocks"><i class="bi-twitter"></i> 
+            Twitter</a>.
+        </p>
         <div id="map" class="w-100" style="height: 700px;">
         </div>
         <script>
@@ -105,10 +130,47 @@ useLeaflet: true
     </div>
     <div class="col-12 col-md-6">
         <h2>Motivación</h2>
-        <p>Duo ei dolores reprimique, reque scribentur conclusionemque at duo. Graeci nominati signiferumque in nec. Nulla putant tibique vim eu, in case officiis mel. Id his vide harum, et cibo sonet cum. At vidisse nostrud ornatus vix, mel ne partem imperdiet reprimique. Aeterno dolorum ut per, purto mucius neglegentur ne pri. </p>
-        <p>Eos ea convenire vulputate efficiendi, quo erat elitr omittantur ut. Usu falli dissentias id, brute pericula at pro. Pro nostro commune complectitur an. Quidam consulatu argumentum at eos. </p>
-        <p>Ut pri nostro putant. Quo homero consequat suscipiantur ea, essent deserunt id eos, mei ignota deleniti at. Has ei falli corpora expetendis, ne ludus corpora per, eu viris recteque salutatus has. Ex usu persecuti reprehendunt, duis facer voluptatum ne vel. </p>
-        <p>Ut sed nulla laudem, id noster euripidis ius, nobis indoctum his te. Prompta platonem sit ne, in has nostrud menandri mnesarchum. Eum quem odio dicit ne, sea id lorem verear temporibus. Feugiat percipitur his te. Quo veri sapientem id, ne nibh adolescens has, alia nostrum efficiendi eu per.</p> 
-        <p>Per fugit error ex. Mei ei everti scaevola incorrupte, per ea voluptua delicata. Laoreet vivendo qui id, vis id meis everti inermis. Accusamus similique cu mea. Pro vero habeo quidam et. </p>
+        <p>
+            No queremos hacer un reconocedor infalible, queremos explorar las 
+            posibilidades de estos sistemas, sus puntos fuertes y sus 
+            debilidades.
+        </p>
+        <p>
+            <b>Aprender a usar <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>:</b> 
+            Hemos entrenado un modelo con siete categorías, una por estatua. El 
+            dataset está formado por aproximadamente 250 fotos por estatua, sin 
+            recortar, tomadas en un día soleado. El modelo está entrenado 
+            durante 15 epochs, obteniendo una precisión del 100% en el conjunto 
+            de validación. Podéis probar el modelo de manera independiente en 
+            <a href="https://teachablemachine.withgoogle.com/models/YoAJBxnN9/">https://teachablemachine.withgoogle.com/models/YoAJBxnN9/</a>
+        </p>
+        <p>
+            <b>Intentar comprender qué ve el modelo:</b> El mundo del modelo
+            está formado por siete categorías (las siete estatuas). Ni siquiera 
+            tiene una categoría «esto no es una estatua», por lo que tratará
+            de asignar cada fotograma a una de esas siete categorías. Pero no
+            sabemos cómo lo hace: ¿es por algún detalle? ¿por contraste? ¿por 
+            una forma? O más enrevesado aún: ¿podría en algún caso elegir su 
+            respuesta basándose en el color del cielo, por ejemplo? Si todas las 
+            fotos de Codorníu están tomadas contra un cielo azul, es posible que
+            el sistema use el fondo como discriminante, en vez de la estatua 
+            propiamente dicha.<br>
+        </p>
+        <p>
+            Tras probar el modelo, nos quedamos con la sensación de que la 
+            categoría correspondiente a Federico Chueca es el «cajón de sastre»:
+            Todo lo que no sea ninguna de las seis otras estatuas es Federico.
+        </p>
+        <p>
+            <b>Reproducir el efecto «Palabra de máquina»:</b> Tendemos a confiar
+            en las instrucciones del GPS, en las indicaciones de las máquinas
+            que nos rodean... sin embargo, estas instrucciones no son siempre
+            precisas ni exactas, como podemos ver en este reconocedor. Al
+            ocultar el stream de vídeo (el botón verde está para algo) quedamos 
+            a disposición del modelo: ya no sabemos lo que ve, sino lo que nos 
+            dice que ve: su interpretación reducida a siete categorías. Si el 
+            modelo nos devuelve Campoamor al 100% ¿podemos afirmar que realmente
+            la imagen que recoge la cámara es la de Campoamor?
+        </p>
     </div>
 </div>

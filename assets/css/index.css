@@ -63,3 +63,7 @@ a.twitter:hover {
 	color: var(--both-black);
 	border-color: var(--both-yellow);
 }
+
+b, strong {
+    font-weight: bolder;
+}

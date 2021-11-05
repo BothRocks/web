@@ -17,6 +17,10 @@ a, a:hover {
     color: var(--both-black);
 }
 
+b, strong {
+    font-weight: 600;
+}
+
 .logo {
     background-color: var(--both-black);
     color: var(--both-yellow);

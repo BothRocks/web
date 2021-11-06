@@ -1,0 +1,182 @@
+---
+title: Las siete estatuas
+description: Usa esta app para indentificar a siete estatuas del Parque de El Retiro.
+thumbnail: /assets/thumbs/proyecto-estatuas-thumb.jpg 
+order: 2
+summary: >-
+  A wonderful serenity has taken possession of my entire soul, 
+  like these sweet mornings of spring which I enjoy with my 
+  whole heart. I am alone, and feel the charm of existence in 
+  this spot, which was created for the bliss of souls like 
+  mine. I am so happy, my dear friend, so absorbed in the 
+  exquisite sense of mere tranquil existence, that I neglect 
+  my talents. I should be incapable of drawing a single 
+  stroke at the present moment; and yet I feel that I never 
+  was a greater artist than now.
+
+stylesheet: /assets/estatuas/estatuas.css
+sketch: /assets/estatuas/estatuas.js?q=5
+
+layout: project
+
+useP5: true
+useML5: true
+useLeaflet: true
+---
+
+<div class="row justify-content-center mt-3">
+    <div class="col-12 col-lg-6 mb-3">
+        <div id="canvas-placeholder" class="" style="text-align:center;"></div>
+    </div>
+    <div class="col-12 col-lg-6 mb-4">
+        <div class="row g-0 shadow">
+            <div class="col-3 col-md-2 col-lg-3 col-xl-2">
+                <img src="/assets/estatuas/background.jpg" class="img-fluid" alt="" id="class_image">
+            </div>
+            <div class="col-9 col-md-10 col-lg-9 col-xl-10 lightbg">
+                <h2 class="mx-3 mt-3" id="class_label">Cargando modelo</h2>
+                <h5 class="mx-3" id="date_label">Enseguida empezamos</h5>
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col-12">
+                <button id="btn_hide_cam" type="button" class="btn btn-success w-100">Oculta el vídeo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 col-lg-3">
+        <h6>Berenguela de Castilla</h6>
+        <div class="progress mb-2">
+            <div id="prg_berenguela" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <h6>R. de Campoamor</h6>
+        <div class="progress mb-2">
+            <div id="prg_campoamor" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h6>F. Chueca</h6>
+        <div class="progress mb-2">
+            <div id="prg_chueca" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h6>R. Codorníu</h6>
+        <div class="progress mb-2">
+            <div id="prg_codorniu" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <h6>Dr. Cortezo</h6>
+        <div class="progress mb-2">
+            <div id="prg_cortezo" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h6>J. Romero de Torres</h6>
+        <div class="progress mb-2">
+            <div id="prg_romero" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h6>Urraca I de León</h6>
+        <div class="progress mb-2">
+            <div id="prg_urraca" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-6 mt-4">
+        <h2>Instrucciones</h2>
+        <p>
+            <i>Aunque puedes usar esta app en tu portátil, seguramente te
+                resulte más cómodo usarla desde el móvil.</i>
+        </p>
+        <p>
+            Hemos entrenado un modelo para que reconozca siete
+            estatuas del Parque de El Retiro, en Madrid. Puedes localizar las
+            estatuas en el mapa.</p>
+        <p>
+            <b>Si quieres usar esta app como debe ser:</b> Date un paseo por el
+            Parque y cuando estés a un par de metros de las estatuas, usa la
+            aplicación para reconocerlas. No hace falta que estés justo
+            enfrente, ni que mantengas el móvil perfectamente vertical. Cuando
+            la red identifique a una estatua con una seguridad superior al 85%,
+            lo indicará.
+        </p>
+        <p>
+            <b>Si quieres usar esta app creativamente:</b> Apunta el móvil a un
+            objeto cualquiera, a un cuadro, a una persona (con su
+            consentimiento, claro). Múevete a su alrededor y mira cómo la red
+            trata desesperadamente de asignarle una categoría. Si encuentras
+            algo curioso, compártelo con nosotros en <a href="https://twitter.com/bothrocks"><i class="bi-twitter"></i>
+                Twitter</a>.
+        </p>
+        <div id="map" class="w-100" style="height: 500px;">
+        </div>
+        <script>
+            // initialize Leaflet
+            var map = L.map('map', {
+                dragging: !L.Browser.mobile,
+                tap: !L.Browser.mobile
+            }).setView({ lon: -3.683, lat: 40.414 }, 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+            }).addTo(map);
+            L.tileLayer.provider('Stamen').addTo(map);
+            L.control.scale({ imperial: true, metric: true }).addTo(map);
+            L.marker({ lat: 40.4109640, lon: -3.6811396 }).bindPopup('Federico Chueca').addTo(map);
+            L.marker({ lat: 40.4117087, lon: -3.6807607 }).bindPopup('Julio Romero de Torres').addTo(map);
+            L.marker({ lat: 40.4129383, lon: -3.6796489 }).bindPopup('Ramón de Campoamor').addTo(map);
+            L.marker({ lat: 40.4127123, lon: -3.6808000 }).bindPopup('Ricardo Codorníu').addTo(map);
+            L.marker({ lat: 40.4139482, lon: -3.6801022 }).bindPopup('Doctor Cortezo').addTo(map);
+            L.marker({ lat: 40.4169398, lon: -3.6859412 }).bindPopup('Berenguela de Castilla').addTo(map);
+            L.marker({ lat: 40.4169039, lon: -3.6864097 }).bindPopup('Urraca I de León').addTo(map);
+        </script>
+    </div>
+    <div class="col-12 col-md-6 mt-4">
+        <h2>Motivación</h2>
+        <p>
+            No queremos hacer un reconocedor infalible, queremos explorar las
+            posibilidades de estos sistemas, sus puntos fuertes y sus
+            debilidades.
+        </p>
+        <p>
+            <b>1. Aprender a usar <a href="https://teachablemachine.withgoogle.com/">Teachable 
+            Machine</a>:</b> Hemos entrenado un modelo con siete categorías, una
+            por estatua. Podéis probar el modelo por vuestra cuenta en
+            <a href="https://teachablemachine.withgoogle.com/models/YoAJBxnN9/">Teachable 
+            Machine</a>. El dataset está formado por aproximadamente 250 fotos 
+            por estatua, sin recortar, tomadas en un día soleado. El modelo está
+            entrenado durante 15 epochs, obteniendo una precisión del 100% en el 
+            conjunto de validación.
+        </p>
+        <p>
+            <b>2. Intentar comprender qué ve el modelo:</b> El mundo del modelo
+            está formado por siete categorías (las siete estatuas). Ni siquiera
+            tiene una categoría «esto no es una estatua», por lo que tratará
+            de asignar cada fotograma a una de esas siete categorías. Pero no
+            sabemos cómo lo hace: ¿es por algún detalle? ¿por contraste? ¿por
+            una forma? O más enrevesado aún: ¿podría elegir su respuesta 
+            basándose en el color del cielo, por ejemplo? Si todas las fotos de 
+            Codorníu están tomadas contra un cielo azul, es posible que el 
+            sistema use el fondo como discriminante, en vez de la estatua
+            propiamente dicha.<br>
+        </p>
+        <p>
+            Tras probar el modelo, nos quedamos con la sensación de que la
+            categoría correspondiente a Federico Chueca es el «cajón de sastre»:
+            Todo lo que no sea ninguna de las seis otras estatuas es Federico.
+        </p>
+        <p>
+            <b>3. Reproducir el efecto «Palabra de máquina»:</b> Tendemos a confiar
+            en las instrucciones del GPS, en las indicaciones de las máquinas
+            que nos rodean... sin embargo, estas instrucciones no son siempre
+            precisas ni exactas, como podemos ver en este reconocedor. Al
+            ocultar el stream de vídeo (el botón verde está para algo) quedamos
+            a disposición del modelo: ya no sabemos lo que ve, sino lo que nos
+            dice que ve: su interpretación reducida a siete categorías. Si el
+            modelo nos devuelve Campoamor al 100% ¿podemos afirmar que realmente
+            la imagen que recoge la cámara es la de Campoamor?
+        </p>
+    </div>
+</div>
+

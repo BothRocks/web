@@ -5,6 +5,12 @@ name: Both
 
 exclude: [both_web.code-workspace, README.md, subir_both.sh, subir_both_dev.sh]
 
+plugins:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
 collections:
   fichas:
     # output: true

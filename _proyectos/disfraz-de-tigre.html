@@ -1,7 +1,7 @@
 ---
 title: Disfraz de tigre
 description: Ejemplo de Computer Vision basado en Teachable Machine 
-thumbnail: /assets/thumbs/proyecto-disfraz-thumb.jpg 
+thumbnail: /assets/thumbs/proyecto-disfraz-thumb.png 
 order: 1
 summary: >-
   When, while the lovely valley teems with vapour around me, 
@@ -30,13 +30,13 @@ redirect_from:
 - /disfraz/
 ---
 
-<div class="row ">
-    
+<div class="row mt-3">
+
     <!-- CANVAS -->
     <div class="col-12 col-md-6">
         <div id="canvas-placeholder" class="darkbg" style="text-align:center;"></div>
     </div>
-    
+
     <div class="col-12 col-md-6">
         <div class="row">
 
@@ -46,39 +46,43 @@ redirect_from:
                     <h1 class="mx-3 my-3 text-center" id="class_label">Cargando modelo</h2>
                 </div>
             </div>
-            
+
             <!-- SCORE -->
-            <div class="col-12 mb-2">        
+            <div class="col-12 mb-2">
                 <h6 class="score text-center">Score</h6>
                 <h1 id="score" class="text-center">0</h1>
             </div>
-            
+
             <!-- START BUTTON -->
             <div class="col-12 mt-2 mb-4">
                 <button id="btn_start" type="button" class="btn btn-success w-100 disabled">Empieza a jugar</button>
-            </div>            
+            </div>
 
             <!-- PROGRESS 1 -->
             <div class="col-6">
                 <h6>Máquina</h6>
                 <div class="progress mb-2">
-                    <div id="prg_maquina" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="prg_maquina" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    </div>
                 </div>
                 <h6>Planta</h6>
                 <div class="progress mb-2">
-                    <div id="prg_planta" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="prg_planta" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    </div>
                 </div>
             </div>
-            
+
             <!-- PROGRESS 2 -->
-            <div class="col-6">        
+            <div class="col-6">
                 <h6>Piedra</h6>
                 <div class="progress mb-2">
-                    <div id="prg_piedra" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="prg_piedra" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    </div>
                 </div>
                 <h6>Animalito</h6>
                 <div class="progress mb-2">
-                    <div id="prg_animalito" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="prg_animalito" class="progress-bar" role="progressbar" aria-valuemin="0"
+                        aria-valuemax="100"></div>
                 </div>
             </div>
 
@@ -86,20 +90,43 @@ redirect_from:
     </div>
 </div>
 
-<div class="row mt-super">
-    <div class="col-12 col-md-6">
+<div class="row">
+    <div class="col-12 col-md-6 mt-4">
         <h2>Instrucciones</h2>
-        <p>Per fugit error ex. Mei ei everti scaevola incorrupte, per ea voluptua delicata. Laoreet vivendo qui id, vis id meis everti inermis. Accusamus similique cu mea. Pro vero habeo quidam et. </p>
-        <p>Ex vis labitur discere nonumes, postea periculis nec ei. Nihil quaeque saperet vel ne, est vero etiam in. Ei pro quod expetenda, no eam dicit aperiri officiis. Vocent definitiones an pro, ei vix nominati oportere cotidieque, vix quis assum partem ut. Ius ut ridens officiis, congue ornatus delicata no usu, vel ut simul dolore dissentiunt. </p>
-        <p>Modo prompta usu eu, sale audiam id vel. Eu cum nonumy iisque, sit no wisi dicat sonet. Te mea commodo tacimates, an nam pertinax salutatus. Vis ne nulla zril forensibus, at sed quando ignota iudicabit. Inciderint sadipscing nec in. An dico aeque dissentias vix, aeterno persecuti mediocritatem sed ut. Sea dico iuvaret consequat an, ea nec fabulas periculis. </p>
+        <p>
+            <i>Aunque puedes usar esta app en tu móvil, seguramente te
+                resulte más cómodo usarla desde el portátil.</i>
+        </p>
+        <p>Hemos entrenado un modelo que reconoce cuatro imágenes: una máquina,
+            una piedra, una planta y un animalito, y lo hemos usado para crear
+            un juego donde tienes que mostrar las imágenes al ritmo de la
+            canción <a href="https://hidrogenesse.bandcamp.com/track/disfraz-de-tigre">Disfraz de tigre</a> de <a
+                href="https://www.austrohungaro.com/hidrogenesse/">Hidrogenesse</a>.
+        </p>
+        <p>Descarga e imprime <a href="/assets/disfraz/plantilla-disfraz.pdf">
+                este PDF</a> de cuatro páginas, un icono por página.</p>
+        <p>Pulsa el botón verde. Sonará un primer compás, para ponerte en
+            situación, y a partir de ese momento, tendrás que mostrar a la
+            cámara el icono correspondiente al texto o al audio. Es el mismo, lo
+            mostramos de dos maneras para que sea más cómodo.</p>
+        <p>El juego no acaba nunca. Cuando te aburras, vuelve a pulsar el botón
+            verde y la música parará.</p>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 mt-4">
         <h2>Motivación</h2>
-        <p>Duo ei dolores reprimique, reque scribentur conclusionemque at duo. Graeci nominati signiferumque in nec. Nulla putant tibique vim eu, in case officiis mel. Id his vide harum, et cibo sonet cum. At vidisse nostrud ornatus vix, mel ne partem imperdiet reprimique. Aeterno dolorum ut per, purto mucius neglegentur ne pri. </p>
-        <p>Eos ea convenire vulputate efficiendi, quo erat elitr omittantur ut. Usu falli dissentias id, brute pericula at pro. Pro nostro commune complectitur an. Quidam consulatu argumentum at eos. </p>
-        <p>Ut pri nostro putant. Quo homero consequat suscipiantur ea, essent deserunt id eos, mei ignota deleniti at. Has ei falli corpora expetendis, ne ludus corpora per, eu viris recteque salutatus has. Ex usu persecuti reprehendunt, duis facer voluptatum ne vel. </p>
-        <p>Ut sed nulla laudem, id noster euripidis ius, nobis indoctum his te. Prompta platonem sit ne, in has nostrud menandri mnesarchum. Eum quem odio dicit ne, sea id lorem verear temporibus. Feugiat percipitur his te. Quo veri sapientem id, ne nibh adolescens has, alia nostrum efficiendi eu per.</p> 
-        <p>Per fugit error ex. Mei ei everti scaevola incorrupte, per ea voluptua delicata. Laoreet vivendo qui id, vis id meis everti inermis. Accusamus similique cu mea. Pro vero habeo quidam et. </p>
+        <p>Duo ei dolores reprimique, reque scribentur conclusionemque at duo. Graeci nominati signiferumque in nec.
+            Nulla putant tibique vim eu, in case officiis mel. Id his vide harum, et cibo sonet cum. At vidisse nostrud
+            ornatus vix, mel ne partem imperdiet reprimique. Aeterno dolorum ut per, purto mucius neglegentur ne pri.
+        </p>
+        <p>Eos ea convenire vulputate efficiendi, quo erat elitr omittantur ut. Usu falli dissentias id, brute pericula
+            at pro. Pro nostro commune complectitur an. Quidam consulatu argumentum at eos. </p>
+        <p>Ut pri nostro putant. Quo homero consequat suscipiantur ea, essent deserunt id eos, mei ignota deleniti at.
+            Has ei falli corpora expetendis, ne ludus corpora per, eu viris recteque salutatus has. Ex usu persecuti
+            reprehendunt, duis facer voluptatum ne vel. </p>
+        <p>Ut sed nulla laudem, id noster euripidis ius, nobis indoctum his te. Prompta platonem sit ne, in has nostrud
+            menandri mnesarchum. Eum quem odio dicit ne, sea id lorem verear temporibus. Feugiat percipitur his te. Quo
+            veri sapientem id, ne nibh adolescens has, alia nostrum efficiendi eu per.</p>
+        <p>Per fugit error ex. Mei ei everti scaevola incorrupte, per ea voluptua delicata. Laoreet vivendo qui id, vis
+            id meis everti inermis. Accusamus similique cu mea. Pro vero habeo quidam et. </p>
     </div>
 </div>
-

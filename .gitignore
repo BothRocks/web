@@ -6,3 +6,4 @@ _site_dev
 Gemfile.lock
 subir_both.sh
 subir_both_dev.sh
+.jekyll-cache

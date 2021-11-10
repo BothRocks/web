@@ -17,12 +17,13 @@ summary: >-
   image, and the breath.
   
 layout: event
+type: Evento
 ---
 <div class="row mt-super-half">
     <div class="col-12">
         <h2>{{page.title}}</h2>
         <h4>{{page.description}}</h4>
-        <h4>{{page.event_date}}</h4>
+        <h4>{{page.event_date | date: "%d/%m/%Y"}}</h4>
         <a>Enlace a las entradas</a>
     </div>
 </div>

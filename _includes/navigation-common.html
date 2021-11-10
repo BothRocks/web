@@ -3,17 +3,21 @@
         <a href="/" class="navbar-brand">
             <img src="/assets/img/logo-60.png" class="img-logo-small" alt="Logo de Both">
         </a>
-        <h1 class="">SECCIÓN</h1>
+        {% if page.type %}
+        <h1 class="">{{page.type}}</h1>
+        {% else %}
+        <h1 class="">{{page.title}}</h1>
+        {% endif %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/evento/maquinito-gafotas.html">Eventos</a>
-                <a class="nav-link" href="/proyectos.html">Proyectos</a>
-                <a class="nav-link" href="https://twitter.com/bothrocks">Twitter</a>
+                <a class="nav-link text-end" href="/">Home</a>
+                <a class="nav-link text-end" href="/evento/maquinito-gafotas.html">Eventos</a>
+                <a class="nav-link text-end" href="/proyectos.html">Proyectos</a>
+                <a class="nav-link text-end" href="https://twitter.com/bothrocks">Twitter</a>
             </div>
         </div>
     </div>

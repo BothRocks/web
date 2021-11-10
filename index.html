@@ -32,7 +32,8 @@ stylesheet: /assets/css/index.css
             <div class="col-10 mt-super mb-super">
                 <p>El objetivo de Both es <b>crear un espacio</b> donde las profesionales de la tecnología, junto con
                     las empresas e instituciones, <b>experimenten e impulsen</b> proyectos en beneficio de todas,
-                    <b>compartiendo resultados y artefactos, pensando y haciendo.</b></p>
+                    <b>compartiendo resultados y artefactos, pensando y haciendo.</b>
+                </p>
                 <p>Queremos ser una comunidad de <b>exploradoras que aprendan, investiguen, y compartan sus
                         descubrimientos</b> acerca de la tecnología que creará un futuro más justo y más diverso.
                     <!-- Gente humilde colaborando en el ambicioso proyecto de redefinir la relación entre máquinas y sociedad. -->
@@ -79,6 +80,60 @@ stylesheet: /assets/css/index.css
         </div>
     </div>
 </div>
+<div class="lightbg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 mt-super">
+                <h1>Eventos</h1>
+                <div class="row mt-5">
+                    {% for evento in site.eventos reversed %}
+                    <div class="col-12 col-lg-6 mb-5">
+                        <h2><a href="{{ evento.url }}.html">{{ evento.title }}</a></h2>
+                        <div class="row">
+                            <div class="col-3 col-md-2 col-lg-3">
+                                <a href="{{ evento.url }}.html">
+                                    <img src="{{ evento.thumbnail }}" class="w-100" alt="{{ evento.title }}">
+                                </a>
+                            </div>
+                            <div class="col-9 col-md-10 col-lg-9">
+                                <p class="small">
+                                    {{evento.summary}}
+                                    <a href="{{ evento.url }}.html">Ir al evento</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-10 mt-super mb-super">
+                <h1>Proyectos</h1>
+                <div class="row mt-5">
+                    {% for proyecto in site.proyectos reversed %}
+                    <div class="col-12 col-lg-6 mb-5">
+                        <h2><a href="{{ proyecto.url }}.html">{{ proyecto.title }}</a></h2>
+                        <div class="row">
+                            <div class="col-3 col-md-2 col-lg-3">
+                                <a href="{{ proyecto.url }}.html">
+                                    <img src="{{ proyecto.thumbnail }}" class="w-100" alt="{{ proyecto.title }}">
+                                </a>
+                            </div>
+                            <div class="col-9 col-md-10 col-lg-9">
+                                <p class="small">
+                                    {{proyecto.summary}}
+                                    <a href="{{ proyecto.url }}.html">Ir al proyecto</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="darkbg">
     <div class="container">
         <!-- NACE -->

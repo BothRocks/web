@@ -152,6 +152,29 @@ nav div.container-fluid {
 
 
 
+.btn-primary {
+	background-color: var(--both-yellow);
+	color: var(--both-black);
+	border-color: var(--both-yellow);
+}
+
+.btn-primary:hover {
+	background-color: var(--both-yellow);
+	color: var(--both-black);
+	border-color: var(--both-yellow);
+}
+
+.btn-dark {
+	background-color: var(--both-black);
+	color: var(--both-yellow);
+	border-color: var(--both-black);
+}
+
+.btn-dark:hover {
+	background-color: var(--both-black);
+	color: var(--both-yellow);
+	border-color: var(--both-black);
+}
 
 .mt-super {
 	margin-top: var(--super-margin);

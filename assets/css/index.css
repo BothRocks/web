@@ -34,20 +34,3 @@ a.twitter {
 a.twitter:hover {
 	color: var(--both-yellow);
 }
-
-
-.btn-primary {
-	background-color: var(--both-yellow);
-	color: var(--both-black);
-	border-color: var(--both-yellow);
-}
-
-.btn-primary:hover {
-	background-color: var(--both-yellow);
-	color: var(--both-black);
-	border-color: var(--both-yellow);
-}
-
-/* b, strong {
-    font-weight: bolder;
-} */

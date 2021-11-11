@@ -35,11 +35,6 @@ h6.score{
     font-size: 1rem;
 }
 
-.lightbg {
-    background-color: #f1db77;
-    color: var(--both-black);
-}
-
 .btn.disabled {
     opacity: .35;
 }

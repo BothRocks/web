@@ -29,9 +29,3 @@ h6, .h6 {
     font-size: 0.85rem;
     font-weight: 400;
 }
-
-.lightbg {
-    background-color: #f1db77;
-    color: var(--both-black);
-}
-

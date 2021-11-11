@@ -26,7 +26,7 @@ stylesheet: /assets/css/index.css
 </div>
 
 <!-- OBJETIVO -->
-<div class="darkbg">
+<div class="background-both-black text-both-yellow">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10 mt-super mb-super">
@@ -69,7 +69,7 @@ stylesheet: /assets/css/index.css
         </div>
     </div>
     <!-- COMPARTE -->
-    <div class="row mt-super-half mb-super justify-content-center">
+    <div class="row mt-super-half justify-content-center">
         <div class="col-10">
             <img src="assets/img/comparte.png" class="col-6 col-md-5 col-lg-4" alt="comparte">
             <p class="small">
@@ -80,55 +80,64 @@ stylesheet: /assets/css/index.css
         </div>
     </div>
 </div>
-<div class="">
-    <div class="container">
-        {% include grid_helper.html%}
-        <div class="row justify-content-center">
-            <div class="col-10 mt-super">
-                <h1>Eventos</h1>
-                <div class="row mt-5">
-                    {% for evento in site.eventos reversed %}
-                    <div class="col-3 mb-5 darkbg">
-                        <a href="{{ evento.url }}.html">
-                            <img src="{{ evento.thumbnail }}" class="w-100" alt="{{ evento.title }}">
-                        </a>
-                        <h2><a href="{{ evento.url }}.html">{{ evento.title }}</a></h2>
-                        
-                        <div class="col-9 col-md-10 col-lg-9">
-                            <p class="small">
-                                {{evento.description}}
-                                <a href="{{ evento.url }}.html">Ir al evento</a>
+
+<!-- EVENTOS -->
+<div class="container">
+    <div class="row justify-content-center mt-super">
+        <div class="col-10">
+            <h1>Eventos</h1>
+            <div class="row">
+                {% for evento in site.eventos reversed %}
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="card text-both-yellow background-both-black h-100">
+                        <div class="card-header">
+                            {{evento.event_date | date: "%d/%m/%Y"}}
+                        </div>
+                        <img src="{{ evento.thumbnail }}" class="w-100 card-img-top" alt="{{ evento.title }}">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ evento.title }}</h2>
+                            <p class="card-text">{{evento.description}}</p>
+                            <p class="text-center">
+                                <a href="{{ evento.url }}.html" class="stretched-link btn btn-primary">Ir al evento</a>
                             </p>
-                            <h2>{{evento.event_date | date: "%d/%m/%Y"}}</h2>
                         </div>
                     </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="col-10 mt-super mb-super">
-                <h1>Proyectos</h1>
-                {% for proyecto in site.proyectos reversed %}
-                <div class="col-3  mb-5 darkbg">
-                    <a href="{{ proyecto.url }}.html">
-                        <img src="{{ proyecto.thumbnail }}" class="w-100" alt="{{ proyecto.title }}">
-                    </a>
-                    <h2><a href="{{ proyecto.url }}.html">{{ proyecto.title }}</a></h2>
-
-                    <p class="small" style="font-size: 1rem;">
-                        {{proyecto.description}}
-                    </p>
-                    <p>
-                        <a href="{{ proyecto.url }}.html" class="btn btn-primary">Ir al proyecto</a>
-                    </p>
                 </div>
                 {% endfor %}
-
             </div>
         </div>
     </div>
 </div>
 
-<div class="darkbg">
+<!-- PROYECTOS -->
+<div class="container">
+    <div class="row justify-content-center mt-super">
+        <div class="col-10">
+            <h1>Proyectos</h1>
+            <div class="row">
+                {% for proyecto in site.proyectos reversed %}
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
+                    <div class="card text-both-yellow background-both-black h-100">
+                        {% include_relative {{proyecto.thumbnail}} %}
+                        <div class="card-body">
+                            <h2>{{ proyecto.title }}</h2>
+                            <p class="card-text">
+                                {{proyecto.description}}
+                            </p>
+                            <p class="text-center">
+                                <a href="{{ proyecto.url }}.html" class="stretched-link btn btn-primary">Ir al
+                                    proyecto</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="background-both-black text-both-yellow">
     <div class="container">
         <!-- NACE -->
         <div class="row justify-content-center">
@@ -152,9 +161,8 @@ stylesheet: /assets/css/index.css
 
 <!-- FORM -->
 <div class="container">
-
     <div class="row mt-super justify-content-center">
-        <div class="col-10 lightbg px-5 pt-5">
+        <div class="col-10 background-both-light px-5 pt-5">
             <p class="small">
                 Estamos construyendo Both<sup>*</sup>.
                 Mientras terminamos de perfilar la escuela y elegimos los primeros temas para el laboratorio,

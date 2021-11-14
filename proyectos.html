@@ -17,17 +17,16 @@ type: Proyectos
         <div class="card-body">
           <div class="row">
             <div class="col-9">
-              <h2>{{ proyecto.title }}</h2>
+              <h2 class="bold">{{ proyecto.title }}</h2>
               <p class="card-text">{{proyecto.summary}}</p>
-              <p class="">
-                <a href="{{ proyecto.url }}.html" class="stretched-link btn btn-dark">Ir al
-                  proyecto</a>
-                </p>
-              </div>
-              <div class="col-3">
-                {% include_relative {{proyecto.thumbnail}} %}
-              </div>
             </div>
+            <div class="col-3">
+              {% include_relative {{proyecto.thumbnail}} %}
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <a href="{{ proyecto.url }}.html" class="stretched-link btn btn-dark">Lanzar</a>
         </div>
       </div>
     </div>

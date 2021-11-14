@@ -91,14 +91,16 @@ stylesheet: /assets/css/index.css
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
                     <div class="card text-both-yellow background-both-black h-100">
                         <div class="card-header">
-                            {{evento.event_date | date: "%d/%m/%Y"}}
+                            {{evento.event_date | date: "%d/%m/%Y"}} - {{evento.event_mode}}
                         </div>
                         <img src="{{ evento.thumbnail }}" class="w-100 card-img-top" alt="{{ evento.title }}">
                         <div class="card-body">
                             <h2 class="card-title">{{ evento.title }}</h2>
                             <p class="card-text">{{evento.description}}</p>
+                        </div>
+                        <div class="card-footer">
                             <p class="text-center">
-                                <a href="{{ evento.url }}.html" class="stretched-link btn btn-primary">Ir al evento</a>
+                                <a href="{{ evento.url }}.html" class="stretched-link btn btn-primary">Registrarme</a>
                             </p>
                         </div>
                     </div>
@@ -124,9 +126,10 @@ stylesheet: /assets/css/index.css
                             <p class="card-text">
                                 {{proyecto.description}}
                             </p>
+                        </div>
+                        <div class="card-footer">
                             <p class="text-center">
-                                <a href="{{ proyecto.url }}.html" class="stretched-link btn btn-primary">Ir al
-                                    proyecto</a>
+                                <a href="{{ proyecto.url }}.html" class="stretched-link btn btn-primary">Abrir</a>
                             </p>
                         </div>
                     </div>

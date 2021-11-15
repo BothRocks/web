@@ -16,8 +16,11 @@ type: Proyectos
       <div class="card text-both-black background-both-yellow h-100 border-both-black">
         <div class="card-body">
           <div class="row">
+            <div class="col-12">
+              <h2 class="bold mb-0">{{ proyecto.title }}</h2>
+              <span class="mb-2 badge rounded-pill background-both-black text-both-yellow">{{ proyecto.badge }}</span>
+            </div>
             <div class="col-9">
-              <h2 class="bold">{{ proyecto.title }}</h2>
               <p class="card-text">{{proyecto.summary}}</p>
             </div>
             <div class="col-3">

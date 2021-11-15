@@ -198,7 +198,7 @@ type: Eventos
         <div class="row">
             {% for proyecto in site.proyectos reversed %}
             <div class="col-12 col-lg-6 mb-2">
-                <div class="card text-both-black background-both-yellow h-100 border-both-black">
+                <div class="card  card-hover text-both-black background-both-yellow h-100 border-both-black">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
@@ -224,19 +224,4 @@ type: Eventos
     </div>
 </div>
 
-<div class="background-both-black text-both-yellow mt-super-half">
-    <div class="container ">
-        <div class="row">
-            <div class="col-12 mt-super-half mb-super-half">
-                <h1>Sigue la conversación en <a href="https://twitter.com/bothrocks" class="text-both-yellow"><i
-                            class="bi bi-twitter me-2"
-                            style="font-size: 2rem; color:var(--both-yellow);"></i>Twitter</a> con el hastag
-                    <a href="https://twitter.com/hashtag/maquinito?src=hashtag_click&f=live"
-                        class="text-both-yellow">#maquinito</a>.
-                </h1>
-                <p>Ius ut ridens officiis, congue ornatus delicata no
-                    usu, vel ut simul dolore dissentiunt.</p>
-            </div>
-        </div>
-    </div>
-</div>
+{% include hashtag-maquinito.html %}

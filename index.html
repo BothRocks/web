@@ -89,7 +89,7 @@ stylesheet: /assets/css/index.css
             <div class="row">
                 {% for evento in site.eventos reversed %}
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <div class="card text-both-yellow background-both-black h-100">
+                    <div class="card text-both-yellow background-both-black h-100 card-hover">
                         <div class="card-header">
                             {{evento.event_date | date: "%d/%m/%Y"}} - {{evento.event_mode}}
                         </div>
@@ -120,7 +120,7 @@ stylesheet: /assets/css/index.css
             <div class="row">
                 {% for proyecto in site.proyectos reversed %}
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <div class="card text-both-yellow background-both-black h-100">
+                    <div class="card text-both-yellow background-both-black h-100 card-hover">
                         {% include_relative {{proyecto.thumbnail}} %}
                         <div class="card-body">
                             <h2>{{ proyecto.title }}</h2>

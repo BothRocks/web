@@ -1,18 +1,21 @@
-<nav class="navbar background-both-black text-both-yellow">
+<nav class="navbar">
     <div class="container-fluid">
-        <a href="/" class="navbar-brand ms-3">
-            <h1 class="text-both-yellow">Both</h1>
-        </a>
-        <h1 class="ms-auto pe-4">
-            {% if page.type %}
-            {{page.type}}
-            {% else %}
-            {{page.title}}
-            {% endif %}
+        <h1>
+            <a href="/" class="navbar-brand ms-3 text-both-yellow">
+                Both
+            </a>
+            <span class="navbar-brand">
+                /
+                {% if page.type %}
+                {{page.type}}
+                {% else %}
+                {{page.title}}
+                {% endif %}
+            </span>
         </h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon text-both-yellow"> = </span>
+            <span class="navbar-toggler-icon text-both-yellow"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav me-auto mb-2 mt-2">

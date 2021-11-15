@@ -40,13 +40,12 @@ h2.bold{
     padding-top: 0;
     padding-bottom: 0;
     margin-right: 0;
+    font-weight: 600;
 }
 
-/* .navbar-toggler {
-    padding: 0 0;
-    font-size: 2.25rem;
-    color: var(--both-black);
-} */
+span.navbar-brand {
+    font-weight: 400;
+}
 
 .navbar-toggler:focus {
     box-shadow: 0 0 0 0.125rem var(--both-black);
@@ -77,60 +76,19 @@ nav div.container-fluid {
 .background-both-black a.nav-link,.background-both-black  a.nav-link:hover{
     color: var(--both-yellow);
 }
-/* .logo {
-    background-color: var(--both-black);
-    color: var(--both-yellow);
-    font-size: 1.5em;
-    font-weight: 600;
-    padding: 92px 8px 0px 8px;
-} */
-
-/* .logo-small{
-    background-color: var(--both-black);
-    color: var(--both-yellow);
-    font-size: 1em;
-    font-weight: 600;
-    padding: 39px 5px 0px 8px;
-} */
 
 .img-logo{
     width: 125px;
 }
 
-/* .img-logo-small{
-    width: 60px;
-} */
-
-/* .logo-small a{
-    background-color: var(--both-black);
-    color: var(--both-yellow);
-    text-decoration: none;
-} */
-
-/* .darkbg {
-    background-color: var(--both-black);
-    color: var(--both-yellow);
-}
-.lightbg {
-    background-color: var(--both-light);
-    color: var(--both-black);
-}
-.yellowbg {
-    background-color: var(--both-yellow);
-    color: var(--both-black);
-} */
-
 .background-both-black {
     background-color: var(--both-black) !important;
-    /* color: var(--both-yellow); */
 }
 .background-both-light {
     background-color: var(--both-light);
-    /* color: var(--both-black); */
 }
 .background-both-yellow {
     background-color: var(--both-yellow);
-    /* color: var(--both-black); */
 }
 
 .border-both-black {
@@ -213,6 +171,15 @@ div.card-body>p:last-child {
 .card-footer{
     background: none;
     border-top: none;
+}
+
+.card-header{
+    background: none;
+    border-bottom: none;
+}
+
+.badge{
+    font-weight: 400;
 }
 
 /* fonts */

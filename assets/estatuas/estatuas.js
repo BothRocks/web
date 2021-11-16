@@ -54,6 +54,12 @@ var data = {
 
 }
 
+if (!isMobileDevice()) {
+    var div_warning = document.querySelector("#show-on-desktop");
+    div_warning.classList.remove("d-none");
+    div_warning.classList.add("d-block");
+}
+
 function preload() {
     classifier = ml5.imageClassifier(imageModelURL + 'model.json', gotModel);
     geomanist = loadFont('/assets/fonts/geomanist-book-webfont.ttf');

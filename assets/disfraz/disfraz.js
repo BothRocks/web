@@ -45,6 +45,12 @@ let countdown;
 let score;
 let scoreElement;
 
+if (isMobileDevice()) {
+    var div_warning = document.querySelector("#show-on-mobile");
+    div_warning.classList.remove("d-none");
+    div_warning.classList.add("d-block");
+}
+
 function preload() {
     classifier = ml5.imageClassifier(imageModelURL + 'model.json', gotModel);
 }
@@ -222,3 +228,18 @@ function randIdx(start) {
 function updateScore(){
     scoreElement.html(score);
 }
+
+
+// Ver esto para la parada instantanea del player
+// this.playerToggle = () => {
+//     if(this.player.playing) {
+//       Tone.Transport.pause();
+//       this.channel.master.gain.value = 0;
+//       this.play_toggle.classList.remove('active');
+//     } else {
+//       Tone.Transport.start();
+//       this.channel.master.gain.value = 1;
+//       this.play_toggle.classList.add('active');
+//     }
+//     this.player.playing = !this.player.playing;
+//   };

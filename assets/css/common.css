@@ -3,6 +3,10 @@
     --both-yellow: #f9d826;
     --both-hover: #977d12;
     --both-black: #2f2605;
+    --both-accent-1-light:#d902a5;
+    --both-accent-1-dark:#8c086d;
+    --both-accent-2-light:#182ad9;
+    --both-accent-2-dark:#000d8c;
     --super-margin: 80px;
   }
 
@@ -117,31 +121,45 @@ nav div.container-fluid {
     color: var(--both-yellow) !important;
 }
 
-
-
-.btn-primary {
+.btn-primary, .btn-primary:hover {
 	background-color: var(--both-yellow);
 	color: var(--both-black);
 	border-color: var(--both-yellow);
 }
 
-.btn-primary:hover {
-	background-color: var(--both-yellow);
-	color: var(--both-black);
-	border-color: var(--both-yellow);
-}
-
-.btn-dark {
+.btn-dark, .btn-dark:hover {
 	background-color: var(--both-black);
 	color: var(--both-yellow);
 	border-color: var(--both-black);
 }
 
-.btn-dark:hover {
-	background-color: var(--both-black);
+.btn-accent-1 {
+	background-color: var(--both-accent-1-dark);
 	color: var(--both-yellow);
-	border-color: var(--both-black);
+	border-color: var(--both-accent-1-dark);
+    font-weight: 500;
 }
+
+.btn-accent-1:hover {
+	background-color: var(--both-accent-1-light);
+	color: var(--both-yellow);
+
+}
+
+.btn-accent-2 {
+	background-color: var(--both-accent-2-dark);
+	color: var(--both-yellow);
+	border-color: var(--both-accent-2-dark);
+    font-weight: 500;
+}
+
+.btn-accent-2:hover {
+	background-color: var(--both-accent-2-light);
+	color: var(--both-yellow);
+
+}
+
+
 
 .mt-super {
 	margin-top: var(--super-margin);

@@ -17,8 +17,8 @@ collections:
     # permalink: /ficha/:name
   proyectos:
     output: true
-    permalink: /proyecto/:name
+    permalink: /proyectos/:name
     sort_by: order
   eventos:
     output: true
-    permalink: /evento/:name
+    permalink: /eventos/:name

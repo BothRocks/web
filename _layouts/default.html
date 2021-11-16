@@ -1,3 +1,9 @@
+{% assign thumbnail_url =  page.thumbnail | split: "/" %}
+{% if thumbnail_url[1] == 'assets'%}
+    {% assign real_thumbmail =  page.thumbnail  %}
+{% else %}
+    {% assign real_thumbmail = '/assets/thumbs/' | append: page.thumbnail | append: '-black.png'  %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,12 +22,12 @@
     <meta property="og:description" content="{{ page.description }}"/>
     <meta property="og:url" content="{{ site.url }}" />
     <meta property="og:site_name" content="{{ site.name }}" />
-    <meta property="og:image" content="{{ site.url }}{{ page.thumbnail}}" />
+    <meta property="og:image" content="{{ site.url }}{{ real_thumbmail}}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@bothrocks" />
     <meta name="twitter:title" content="{{ page.title }} - {{ site.title }}" />
     <meta name="twitter:description" content="{{ page.description }}" />
-    <meta name="twitter:image" content="{{ site.url }}{{ page.thumbnail}}" />
+    <meta name="twitter:image" content="{{ site.url }}{{ real_thumbmail}}" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">

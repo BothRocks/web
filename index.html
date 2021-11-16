@@ -121,7 +121,7 @@ stylesheet: /assets/css/index.css
                 {% for proyecto in site.proyectos reversed %}
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
                     <div class="card text-both-yellow background-both-black h-100 card-hover">
-                        {% include_relative {{proyecto.thumbnail}} %}
+                        <img src="/assets/thumbs/{{proyecto.thumbnail}}-yellow.png" class="w-75 mx-auto px-2 pt-2" alt="{{ proyecto.title }}">
                         <div class="card-body">
                             <h2>{{ proyecto.title }}</h2>
                             <p class="card-text">

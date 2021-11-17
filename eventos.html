@@ -11,24 +11,33 @@ type: Eventos
 ---
 <!-- Falta incluir la fecha -->
 <div class="container">
-  <div class="row mt-5">
+  <div class="row mt-super">
     {% for evento in site.eventos reversed %}
-    <div class="col-12 mb-5">
-      <h2><a href="{{ evento.url }}.html">{{ evento.title }}</a></h2>
-      <div class="row">
-        <div class="col-3 col-md-2 col-xl-1">
-          <img src="{{ evento.thumbnail }}" class="w-100">
+    <div class="col-12 col-lg-6 mb-2">
+      <div class="card text-both-black background-both-yellow h-100 border-both-black card-hover">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="bold mb-0">{{ evento.title }}</h2>
+              <span class="mb-2 badge rounded-pill background-both-black text-both-yellow">{{ evento.badge }}</span>
+            </div>
+            <div class="col-9">
+              <p class="card-text">{{evento.description}}</p>
+            </div>
+            <div class="col-3">
+              <img src="{{evento.thumbnail}}" class="w-100" alt="{{ evento.title }}">
+            </div>
+          </div>
         </div>
-        <div class="col-9 col-md-10 col-xl-11">
-          <p>
-            {{evento.description}} 
-          </p>
-          <p>
-            <a href="{{ evento.url }}.html">Ir al evento</a>
-          </p>
+        <div class="card-footer text-center">
+          <a href="{{ evento.url }}.html" class="stretched-link btn btn-dark">Visitar</a>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
+
+
+
+

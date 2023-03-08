@@ -1,4 +1,5 @@
 both_web.code-workspace
+assets/fonts
 *.woff2
 geomanist-book-webfont.ttf
 _site
@@ -7,3 +8,4 @@ Gemfile.lock
 subir_both.sh
 subir_both_dev.sh
 .jekyll-cache
+.DS_Store

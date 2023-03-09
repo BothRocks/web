@@ -8,6 +8,12 @@ p.small {
     font-weight: 400;
 }
 
+p.smaller {
+    font-size: calc(0.7rem + 1.5vw);
+    font-weight: 250;
+    color: var(--both-yellow);
+}
+
 b {
     font-weight: 600;
 } 

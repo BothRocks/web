@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Both es una escuela y un laboratorio. Un punto de encuentro entre tecnología y humanismo.
+description: Both es un estudio y un laboratorio.
 thumbnail: /assets/favicon/apple-touch-icon.png
 
 layout: default
@@ -9,34 +9,32 @@ footer: footer-home.html
 
 stylesheet: /assets/css/index.css
 ---
-<!-- OPENING-->
+<!-- OPENING: (fondo amarillo) -->
 <div class="container">
     <div class="row justify-content-center mb-super mt-super">
         <div class="col-10 col-md-5 order-md-2 my-auto">
-            <img class="w-100" src="assets/img/escuela.png" alt="escuela y laboratorio">
+            <img class="w-100" src="assets/img/laboratorioyestudio.png" alt="laboratorio y estudio">
         </div>
         <div class="col-10 d-md-none mt-super-half">
         </div>
         <div class="col-10 col-md-5 order-md-1">
             <h1>
-                {{ page.description }}
+                Both es un laboratorio.<br> 
+                Both es un estudio.<br> 
+                Donde la exploración y la ejecución van de la mano.
             </h1>
         </div>
     </div>
 </div>
 
-<!-- OBJETIVO -->
+<!-- RESUMEN MISIÓN: (fondo marrón/negro) -->
 <div class="background-both-black text-both-yellow">
-    <div class="container">
+    <div class="container background-both-black text-both-yellow">
         <div class="row justify-content-center">
             <div class="col-10 mt-super mb-super">
-                <p>El objetivo de Both es <b>crear un espacio</b> donde las profesionales de la tecnología, junto con
-                    las empresas e instituciones, <b>experimenten e impulsen</b> proyectos en beneficio de todas,
-                    <b>compartiendo resultados y artefactos, pensando y haciendo.</b>
+                <p>En el <b>laboratorio</b> pensamos y experimentamos, explorando la intersección entre las nuevas tecnologías y el humanismo. Es un espacio donde la curiosidad impulsa la innovación.
                 </p>
-                <p>Queremos ser una comunidad de <b>exploradoras que aprendan, investiguen, y compartan sus
-                        descubrimientos</b> acerca de la tecnología que creará un futuro más justo y más diverso.
-                    <!-- Gente humilde colaborando en el ambicioso proyecto de redefinir la relación entre máquinas y sociedad. -->
+                <p>En el <b>estudio</b> transformamos las ideas en proyectos tangibles y escalables. Es un espacio dedicado al desarrollo y materialización de soluciones viables y efectivas. 
                 </p>
             </div>
         </div>
@@ -44,155 +42,64 @@ stylesheet: /assets/css/index.css
 </div>
 
 
-<div class="container">
-    <!-- APRENDE -->
-    <div class="row justify-content-center mt-super">
-        <div class="col-10">
-            <img src="assets/img/aprende.png" class="col-6 col-md-5 col-lg-4" alt="aprende">
-            <p class="small">
-                <b>Fórmate en nuestra escuela.</b> Tratamos temas como tecnologías futuras y nuevos interfaces;
-                IAs, algoritmos, sesgos y cajas negras;
-                la relación entre tecnología, negocio y ética; nuevos modelos de cultura y liderazgo; nuevas filosofías de desarrollo.
-            </p>
-        </div>
-    </div>
-    <!-- INVESTIGA -->
-    <div class="row mt-super-half justify-content-center">
-        <div class="col-10">
-            <img src="assets/img/investiga.png" class="col-6 col-md-5 col-lg-4" alt="investiga">
-            <p class="small">
-                <b>Explora nuevas ideas en el laboratorio</b>, profundizando en la relación entre tecnología y
-                humanismo. Trae tus propios temas o súmate a los nuestros. Nosotros te proporcionaremos el espacio y los
-                medios para desarrollar el conocimiento y documentar los procesos.
-            </p>
-        </div>
-    </div>
-    <!-- COMPARTE -->
-    <div class="row mt-super-half justify-content-center">
-        <div class="col-10">
-            <img src="assets/img/comparte.png" class="col-6 col-md-5 col-lg-4" alt="comparte">
-            <p class="small">
-                <b>Comunica el conocimiento generado.</b>
-                Compartiendo y debatiendo los descubrimientos,
-                ideas y conclusiones creamos comunidad y mejoramos la sociedad.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- FUNDAMENTOS -->
-<!--
-<div class="container ">
-    <div class="row mt-super justify-content-center pb-5">
-        <div class="col-10 background-both-light px-5 pt-5 pb-5">
-
-            <a name="fundamentos"></a>
-            <h1 class="text-both-yellow">¡PRÓXIMO CURSO PRESENCIAL!</h1><br/>
-            <p class="small"><b>Composición y Producción Musical asistidas por IA</b><br/>
-                <i>Presencial en Madrid: 19/junio/2023</i></p>
-
-            <div class="row" style="border:1px;">
-                <div class="col-5 order-md-1">
-                    
-                    Aunque la música generada por ordenador no es algo nuevo, en los cinco últimos años hemos vivido un avance increíble en las herramientas que ayudan a quienes componen y producen música a componer nuevas melodías, inventar sonidos –o imitar los existentes– y utilizar nuevos efectos y recursos para la producción.<br><br>
-
-                    En este curso utilizaremos las herramientas gratuitas más recientes para entender cómo funcionan y cómo nos pueden ayudar en nuestras creaciones musicales. 
-                    
-                </div>
-
-                <div class="col-7 order-md-2">
-                    <img class="col-9" src="assets/img/musica-e-ia-web.jpg" alt="fundamentos IA">
-                </div>
-            </div>
-            <p class="text-center">
-                <a href="https://lanavenodriza.com/composicion-y-produccion-musical-asistidas-por-ia/" target="_blank" class="btn btn-primary rounded-pill mt-5" style=""> Quiero saber más </a>
-            </p>
-        </div>
-    </div>
-</div>
--->
-
-<!-- EVENTOS -->
-<!--
+<!-- HISTORIA: (fondo amarillo)  -->
 <div class="container">
     <div class="row justify-content-center mt-super">
-        <div class="col-10">
-            <h1>Eventos</h1>
-            <div class="row">
-                {% for evento in site.eventos reversed %}
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <div class="card text-both-yellow background-both-black h-100 card-hover">
-                        <div class="card-header">
-                            {{evento.event_date | date: "%d/%m/%Y"}} - {{evento.event_mode}}
-                        </div>
-                        <img src="{{ evento.thumbnail }}" class="w-100 card-img-top" alt="{{ evento.title }}">
-                        <div class="card-body">
-                            <h2 class="card-title">{{ evento.title }}</h2>
-                            <p class="card-text">{{evento.description}}</p>
-                            <span class="badge rounded-pill background-both-yellow text-both-black">{{ evento.badge }}</span>
-                        </div>
-                        <div class="card-footer">
-                            <p class="text-center">
-                                <a href="{{ evento.url }}.html" class="stretched-link btn btn-primary">Registrarme</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+        <div class="col-10">            
+            <h1>¿Cómo hemos llegado aquí?</h1>                
+            <img src="assets/img/organigrama.png" alt="quienes somos">
+            <p class="small">
+                En 2003 montamos Tecnilógica, una empresa donde [...]<br>
+                En 2016 nos adquirió Accenture y [...]<br>
+                En 2023 arrancamos Both para [...]
+            </p>
+
+            <!--
+            <p class="small mb-0">Esta exploración empieza con nosotros tres:
+                <a href="http://daniseuba.com" target="_blank"><b>Dani Seuba</b></a>,
+                <a href="http://eduardo.noeda.com" target="_blank"><b>Eduardo Noeda</b></a> y
+                <a href="http://juanalonso.es" target="_blank"><b>Juan Alonso</b></a>.
+            </p>
+            -->
+            
         </div>
     </div>
-</div>
--->
 
-<!-- PROYECTOS -->
-<!--
-<div class="container">
-    <div class="row justify-content-center mt-super mb-super">
-        <div class="col-10">
-            <h1>Proyectos</h1>
-            <div class="row">
-                {% for proyecto in site.proyectos reversed %}
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-2">
-                    <div class="card text-both-yellow background-both-black h-100 card-hover">
-                        <img src="/assets/thumbs/{{proyecto.thumbnail}}-yellow.png" class="w-75 mx-auto px-2 pt-2" alt="{{ proyecto.title }}">
-                        <div class="card-body">
-                            <h2>{{ proyecto.title }}</h2>
-                            <p class="card-text">
-                                {{proyecto.description}}
-                            </p>
-                            <span class="badge rounded-pill background-both-yellow text-both-black">{{ proyecto.badge }}</span>
-                        </div>
-                        <div class="card-footer">
-                            <p class="text-center">
-                                <a href="{{ proyecto.url }}" class="stretched-link btn btn-primary">Abrir</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 </div>
--->
 
+
+
+<!-- QUÉ HACEMOS: (fondo marrón/negro) -->
 <div class="background-both-black text-both-yellow">
     <div class="container">
-        <!-- NACE -->
         <div class="row justify-content-center">
             <div class="col-10 mt-super mb-super">
-                <h1>Both nace para las personas</h1>
-                <p class="small">La tecnología se ha vuelto imprescindible y se ha expandido, anteponiéndose a las
-                    personas.
-                    Nos facilita la vida pero nos aleja de una sociedad empática.
-                    En <b>Both</b> buscamos explorar las consecuencias de esta brecha y crear espacios comunes entre
-                    tecnología y personas.</p>
-                <!-- construyendo la sociedad que queremos habitar -->
-                <p class="small mb-0">Esta exploración empieza con nosotros tres:
-                    <a href="http://daniseuba.com" target="_blank"><b>Dani Seuba</b></a>,
-                    <a href="http://eduardo.noeda.com" target="_blank"><b>Eduardo Noeda</b></a> y
-                    <a href="http://juanalonso.es" target="_blank"><b>Juan Alonso</b></a>.
+                <h1>¿Qué hacemos?</h1>
+                <p class="small">
+                    Como <b>laboratorio</b>, transformamos las ideas en innovaciones prácticas a través de pruebas de concepto y talleres.
+                    <ul>
+                    <li>Investigación en nuevas tecnologías: profundizamos en la exploración de nuevas tecnologías para adelantarnos a las tendencias del mercado.</li>
+                    <li>Pruebas de concepto: realizamos experimentos prácticos para probar y validar nuevas ideas.</li>
+                    <li>Talleres de innovación: ofrecemos talleres interactivos en áreas como Creative Coding o IA generativa.</li>
+                    <li>Colaboraciones educativas: trabajamos junto con La Nave Nodriza en formaciones especializadas, fomentando el aprendizaje continuo.</li>
+                    </ul>
+                </p>
+                <p class="small">
+                    Como <b>estudio</b>, nos dedicamos a desarrollar y acelerar soluciones de negocio innovadoras. Combinamos la exploración de nuevas tecnologías con una ejecución eficiente, integrando inteligencia artificial para revolucionar el ciclo de desarrollo.
+                    <ul>
+                        <li>
+                        Integración de IA: utilizamos inteligencia artificial para mejorar la productividad y eficiencia en el desarrollo.
+                        </li>
+                        <li>Gestión avanzada de datos: Nos centramos en manejar datos de manera eficaz para alimentar y mejorar los modelos de ML.
+                        </li>
+                        <li>Interfaz de Usuario Intuitiva con ML: Desarrollamos interfaces de usuario que se integran perfectamente con capacidades avanzadas de ML.
+                        </li>
+                        <li>Innovación Continua en ML y IA: Exploramos constantemente nuevas tecnologías en aprendizaje automático e inteligencia artificial.
+                        </li>
+                        <li>Ética y Transparencia: Aseguramos prácticas éticas y transparencia en todos nuestros proyectos.</li>
+                        <li>Automatización y ML: Centrados en la generación de código automatizado mediante técnicas de ML avanzadas.</li>
+                        <li>Optimización de Modelos de ML: Enfoque constante en la mejora y optimización de modelos de machine learning.</li>
+                    </ul>
                 </p>
                 
             </div>
@@ -200,7 +107,80 @@ stylesheet: /assets/css/index.css
     </div>
 </div>
 
-<!-- FORM -->
+<!-- PRÓXIMOS CURSOS: (fondo amarillo)  -->
+<div class="container ">
+    <div class="row mt-super justify-content-center pb-5">
+        <div class="col-10 background-both-light px-5 pt-5 pb-5">
+
+            <a name="cursos"></a>
+
+            <h1 class="text-both-yellow">PRÓXIMOS CURSOS CON LA NAVE NODRIZA</h1><br/>
+
+            <div class="row" >
+                <div class="col-6 px-5">
+                    <p class="small"><b>IA Generativa en Acción: Creación de Productos Digitales</b></p>
+                </div>
+
+                <div class="col-6 px-5">
+                    <p class="small"><b>IA Generativa: Fundamentos, Usos y Visión Crítica</b></p>
+                </div>
+            </div>
+
+            <div class="row " >
+                <div class="col-6 px-5">
+                    <i>Presencial en Madrid: 5-14/marzo/2024</i><br><br>
+                    En este taller intensivo de 4 días, te proponemos profundizar en las posibilidades que brinda la Inteligencia Artificial generativa en la creación de productos digitales<br><br>
+                    A través de un itinerario que combina la exploración y la experimentación abordaremos todas las oportunidades de contar con  la IA como una aliada creativa durante todo el proceso de diseño, desde la investigación de datos para obtener insights valiosos, hasta el desarrollo de prototipos tangibles.
+                </div>
+
+                <div class="col-6 px-5">
+                    <i>Presencial en Madrid: 11/abril/2024</i><br><br>
+                    Más allá del prompt y del hype del momento queremos hacer una reflexión crítica sobre el estado del arte de diferentes herramientas de IA, navegando desde sus orígenes hasta el actual boom generativo.<br><br>
+                    Analizaremos y utilizaremos las diferentes herramientas clave (texto, imagen y audio) con ejercicios y contenidos actualizados a los avances tecnológicos de las últimas semanas, para terminar con una visión ética y humanista de estas tecnologías. Nos empaparemos con la teoría, nos pondremos manos a la obra con la práctica y debatiremos sobre sus implicaciones.
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-6 ">
+                    <p class="text-center">
+                        <a href="https://lanavenodriza.com/ia-generativa-en-accion-creacion-de-productos-digitales/" target="_blank" class="btn btn-primary rounded-pill mt-5" style=""> Quiero saber más </a>
+                    </p>                    
+                </div>
+
+                <div class="col-6 ">
+                    <p class="text-center">
+                        <a href="https://lanavenodriza.com/ia-generativa-fundamentos" target="_blank" class="btn btn-primary rounded-pill mt-5" style=""> Quiero saber más </a>
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- PROYECTOS QUE HEMOS HECHO: (fondo marrón/negro) -->
+<div class="background-both-black text-both-yellow">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 mt-super mb-super">
+                <h1>Algunos proyectos recientes</h1>
+                <p class="small">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- FORMULACIO DE CONTACTO: (fondo amarillo)  -->
 <div class="container">
     <div class="row mt-super justify-content-center">
         <div class="col-10 background-both-light px-5 pt-5">
@@ -211,6 +191,8 @@ stylesheet: /assets/css/index.css
             <p class="small">
                 Y si no quieres perderte nada, apúntate a nuestra newsletter:
             </p>
+
+
             <!-- Begin Mailchimp Signup Form -->
             <div id="mc_embed_signup">
                 <a name="contacto"></a>
@@ -244,6 +226,7 @@ stylesheet: /assets/css/index.css
                 </form>
             </div>
             <!--End mc_embed_signup-->
+
         </div>
     </div>
     <div class="row justify-content-center">

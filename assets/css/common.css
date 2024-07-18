@@ -1,8 +1,8 @@
 :root {
     --both-light: #fcfaee;
-    --both-yellow: #f9d826;
+    --both-yellow: #f9d826 ;
     --both-hover: #977d12;
-    --both-black: #2f2605;
+    --both-dark: #2f2605;
     --both-accent-1-light:#d902a5;
     --both-accent-1-dark:#8c086d;
     --both-accent-2-light:#182ad9;
@@ -10,87 +10,45 @@
     --lanave-rosa:#E2007A;
     --super-margin: 80px;
   }
-
+/* El amarillo real debería ser este
+--both-yellow: #f3d951; 
+pero en la web queda mejor el de más arriba. */
 body { 
 	background-color: var(--both-yellow); 
-	color: var(--both-black);
+	color: var(--both-dark);
 	font-family: geomanistregular;
     line-height: 1.3;
 }
 
 a, a:hover {
-    color: var(--both-black);
+    color: var(--both-dark);
 }
 
 b, strong, .strong {
     font-weight: 600;
 }
 
-h1, .h1 {
+h1, .h1 { 
+    /* original: calc(1.375rem + 1.5vw); */
+    font-size: calc(1.5rem + 1.5vw);
+}
+
+h2, .h2 { 
+    /* original: calc(1.375rem + 1.5vw); */
     font-size: calc(1rem + 1.5vw);
-    font-weight: 700;
-    line-height: 1.3;
+    font-weight: 300;
 }
 
-h2.bold{
-    font-weight: 600;
-}
-
-.navbar{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.navbar-brand {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-right: 0;
-    font-weight: 600;
-}
-
-span.navbar-brand {
-    font-weight: 400;
-}
-
-.navbar-toggler:focus {
-    box-shadow: 0 0 0 0.125rem var(--both-black);
-}
-
-.background-both-black .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.125rem var(--both-yellow);
-}
-
-nav div.container-fluid {
-    padding-left: 0;
-}
-
-.nav-link{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.fs-125rem {
-    font-size: 1.25rem;;
-}
-
-.navbar-toggler-icon{
-    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2847, 38, 5, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M3 7h24M3 14h24M3 21h24'/%3e%3c/svg%3e")
-} 
-
-.text-both-yellow.navbar-toggler-icon{
-    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28249, 216, 38, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M3 7h24M3 14h24M3 21h24'/%3e%3c/svg%3e")
-} 
-
-.background-both-black a.nav-link,.background-both-black  a.nav-link:hover{
-    color: var(--both-yellow);
+p, .p, li, .li {
+    font-size: 1.3rem; 
 }
 
 .img-logo{
     width: 125px;
 }
 
-.background-both-black {
-    background-color: var(--both-black) !important;
+.background-both-dark {
+    background-color: var(--both-dark) !important;
 }
 .background-both-light {
     background-color: var(--both-light);
@@ -99,8 +57,8 @@ nav div.container-fluid {
     background-color: var(--both-yellow);
 }
 
-.border-both-black {
-    border-color: var(--both-black) !important;
+.border-both-dark {
+    border-color: var(--both-dark) !important;
     border-width: 0.75px;
 }
 .border-both-light {
@@ -112,8 +70,8 @@ nav div.container-fluid {
     border-width: 0.75px;
 }
 
-.text-both-black {
-    color: var(--both-black) !important;
+.text-both-dark {
+    color: var(--both-dark) !important;
 }
 .text-both-light {
     color: var(--both-light) !important;
@@ -122,45 +80,17 @@ nav div.container-fluid {
     color: var(--both-yellow) !important;
 }
 
-.btn-primary, .btn-primary:hover {
+.btn-yellow, .btn-yellow:hover {
 	background-color: var(--both-yellow);
-	color: var(--both-black);
+	color: var(--both-dark);
 	border-color: var(--both-yellow);
 }
 
 .btn-dark, .btn-dark:hover {
-	background-color: var(--both-black);
+	background-color: var(--both-dark);
 	color: var(--both-yellow);
-	border-color: var(--both-black);
+	border-color: var(--both-dark);
 }
-
-.btn-accent-1 {
-	background-color: var(--both-accent-1-dark);
-	color: var(--both-yellow);
-	border-color: var(--both-accent-1-dark);
-    font-weight: 500;
-}
-
-.btn-accent-1:hover {
-	background-color: var(--both-accent-1-light);
-	color: var(--both-yellow);
-
-}
-
-.btn-accent-2 {
-	background-color: var(--both-accent-2-dark);
-	color: var(--both-yellow);
-	border-color: var(--both-accent-2-dark);
-    font-weight: 500;
-}
-
-.btn-accent-2:hover {
-	background-color: var(--both-accent-2-light);
-	color: var(--both-yellow);
-
-}
-
-
 
 .mt-super {
 	margin-top: var(--super-margin);
@@ -170,39 +100,28 @@ nav div.container-fluid {
 	margin-bottom: var(--super-margin);
 }
 
-.mt-super-half {
-	margin-top: calc(var(--super-margin)/1.75);
+
+/*
+p {
+    font-size: calc(1rem + 1.5vw);
+    font-weight: 300;
 }
 
-.mb-super-half {
-	margin-bottom: calc(var(--super-margin)/1.75);
+b {
+    font-weight: 600;
+} 
+*/
+
+
+a {
+    /* color: var(--both-yellow); */
+    text-underline-offset: 4px;
 }
 
-p.card-text{
-    font-size: 1rem;
+a:hover {
+    /* color: var(--both-yellow);  */
 }
 
-div.card-body>p:last-child {
-    margin-bottom: 0;
-}
-
-.card-hover:hover{
-    box-shadow:.25rem .25rem .5rem rgba(0,0,0,.25)!important
-}
-
-.card-footer{
-    background: none;
-    border-top: none;
-}
-
-.card-header{
-    background: none;
-    border-bottom: none;
-}
-
-.badge{
-    font-weight: 400;
-}
 
 /* fonts */
 @font-face {
@@ -259,7 +178,7 @@ div.card-body>p:last-child {
     font-weight: 800;
     font-style: normal;
     font-display: swap;
-    src: url('/assets/fonts/geomanist-black-webfont.woff2') format('woff2')
+    src: url('/assets/fonts/geomanist-dark-webfont.woff2') format('woff2')
 }
 @font-face {
     font-family: "geomanistregular";
@@ -269,3 +188,68 @@ div.card-body>p:last-child {
     src: url('/assets/fonts/geomanist-ultra-webfont.woff2') format('woff2')
 }
     
+
+
+/*
+h1, .h1 {
+    font-size: calc(1rem + 1.5vw);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h2.bold{
+    font-weight: 600;
+}
+*/
+
+/*
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    font-weight: 600;
+}
+
+span.navbar-brand {
+    font-weight: 400;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.125rem var(--both-dark);
+}
+
+
+.background-both-dark .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.125rem var(--both-yellow);
+}
+
+nav div.container-fluid {
+    padding-left: 0;
+}
+
+.nav-link{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.fs-125rem {
+    font-size: 1.25rem;;
+}
+
+.navbar-toggler-icon{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2847, 38, 5, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M3 7h24M3 14h24M3 21h24'/%3e%3c/svg%3e")
+} 
+
+.text-both-yellow.navbar-toggler-icon{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28249, 216, 38, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M3 7h24M3 14h24M3 21h24'/%3e%3c/svg%3e")
+} 
+
+.background-both-dark a.nav-link,.background-both-dark  a.nav-link:hover{
+    color: var(--both-yellow);
+}
+*/

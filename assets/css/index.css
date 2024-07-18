@@ -1,9 +1,6 @@
-p {
-    font-size: calc(1rem + 1.5vw);
-    font-weight: 300;
-}
 
-p.small {
+
+/* p.small {
     font-size: calc(0.8rem + 1.5vw);
     font-weight: 400;
 }
@@ -13,30 +10,12 @@ p.smaller {
     font-weight: 250;
     color: var(--both-yellow);
 }
+*/
 
-b {
-    font-weight: 600;
-} 
-
+/*
 li {
     font-size: calc(0.8rem + 1.5vw);
     font-weight: 300;
 }
+*/
 
-a {
-	color: var(--both-yellow);
-    text-underline-offset: 4px;
-}
-
-a:hover {
-	color: var(--both-hover);
-}
-
-a.twitter {
-	color: var(--both-black);
-    text-underline-offset: 4px;
-}
-
-a.twitter:hover {
-	color: var(--both-yellow);
-}
